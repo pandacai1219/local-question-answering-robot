@@ -1,0 +1,9 @@
+configparser
+langchain
+openai
+gtts
+streamlit
+chardet
+faiss-cpu
+unstructured
+tiktoken
