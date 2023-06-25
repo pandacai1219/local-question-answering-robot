@@ -3,10 +3,12 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import TextLoader
 from langchain.document_loaders import UnstructuredWordDocumentLoader
+from langchain.document_loaders import UnstructuredPDFLoader
 from keys import OpenAI_API_KEY
 from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
+from template import prompt_template_Document, prompt_template_GPT
 
 class FaissDB_Utils:
     def __init__(self, api_key=None,prompt_template=None,temperature=None,max_context_tokens=None,max_response_tokens=None,file_chunk_size=None):
@@ -15,15 +17,25 @@ class FaissDB_Utils:
         else:
             self.api_key = api_key
         if file_chunk_size is None:
-            self.file_chunk_size = file_chunk_size
-        else:
             self.file_chunk_size = 100
-        self.max_context_tokens = max_context_tokens
-        self.temperature=temperature
+        else:
+            self.file_chunk_size = file_chunk_size
+        if temperature is None:
+            self.temperature = 0
+        else:
+            self.temperature = temperature
+        if max_context_tokens is None:
+            self.max_context_tokens = 1024
+        else:
+            self.max_context_tokens = max_context_tokens
+        if prompt_template is None:
+            self.prompt_template = prompt_template_Document
+        else:
+            self.prompt_template = prompt_template
         self.embeddings = OpenAIEmbeddings(openai_api_key=OpenAI_API_KEY)
         self.text_splitter = RecursiveCharacterTextSplitter(chunk_size=self.file_chunk_size, chunk_overlap=20)
         self.llm = OpenAI(temperature=self.temperature, max_tokens=self.max_context_tokens, openai_api_key=self.api_key)
-        PROMPT = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
+        PROMPT = PromptTemplate(template=self.prompt_template, input_variables=["context", "question"])
         print(str(PROMPT))
         self.chain = load_qa_chain(llm=self.llm, chain_type='stuff', verbose=True, prompt=PROMPT)
         self.docCount = 0
@@ -42,6 +54,8 @@ class FaissDB_Utils:
             loader = UnstructuredWordDocumentLoader(file_path)
         elif file_path.endswith(".txt"):
             loader = TextLoader(file_path, encoding='utf-8')
+        elif file_path.endswith(".pdf"):
+            loader = UnstructuredPDFLoader(file_path)
         else:
             raise ValueError(f"Unsupported file format: {file_path}")
 

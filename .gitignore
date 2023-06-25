@@ -2,4 +2,5 @@
 dbf/*
 #忽略bak目录下的文件
 bak/*
-
+#忽略主目录下的answer.wav
+answer.wav

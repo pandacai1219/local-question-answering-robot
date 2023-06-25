@@ -67,16 +67,19 @@ else:
     st.title("问答机器人")
 
     # 创建复选框，使用函数设置标签
-    is_suggestion = st.checkbox("回答是否超出本地文档",value=True, key="is_suggestion")
+    is_suggestion = st.checkbox("回答是否超出本地文档",value=False, key="is_suggestion")
 
     # 根据复选框状态，选择使用哪种搜索方式
-    prompt_template=""
+    st.session_state.prompt_template = prompt_template_Document
     if is_suggestion:
         # 使用联想搜索方式
-        prompt_template = prompt_template_GPT
+        st.session_state.prompt_template = prompt_template_GPT
+        print("使用联想搜索方式")
     else:
         # 使用精确搜索方式
-        prompt_template = prompt_template_Document
+        st.session_state.prompt_template = prompt_template_Document
+        print("使用精确搜索方式")
+    print(st.session_state.prompt_template)
     #相关参数提供默认值
     values = {'temperature': 0.7, 'max_context_tokens': 1024, 'max_response_tokens': 256, 'file_chunk_size': 20,'api_key':OpenAI_API_KEY2}
     values_to_session_state(st, values)
@@ -94,8 +97,7 @@ else:
           # 将上传的文件保存到项目主目录的data文件夹中
           with open(os.path.join("data", uploaded_file.name), "wb") as f:
               f.write(uploaded_file.getbuffer())
-          if "faissDB_Utils" not in st.session_state:
-              st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
+              st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
           print("1-Reading document...") 
           print(file_details)
           # 读取文档
@@ -124,25 +126,22 @@ else:
     if st.button("提交", key="submit_button"):
         if question:
           print("0-Loading..." + str(question))
-          if "faissDB_Utils" not in st.session_state:
-              st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
+          st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
           langchain_util = st.session_state.faissDB_Utils
           llm = langchain_util.llm
           print("1-Loading question answering chain..." + str(llm))
           my_bar.progress(10, text="正在加载问题回答模型")
-          embeddings = langchain_util.embeddings
-          print("2-Loading FaissDB index..." + str(embeddings))
           try:
               docsearch = langchain_util.search_documents(persist_directory='dbf', query=question, userName=username)
-              print("3-Searching for similar documents..." + str(docsearch))
+              print("2-Searching for similar documents..." + str(docsearch))
           
               my_bar.progress(50, text="正在加载问题回答模型")
               chain = langchain_util.chain
-              print("4-Answering question..." + str(chain))
+              print("3-Answering question..." + str(chain))
               my_bar.progress(80, text="正在回答问题")
               with get_openai_callback() as cb:
                 answer = chain.run(input_documents=docsearch, question=question, verbose=True)
-              print("5-Answering question..." + str(answer))
+              print("4-Answering question..." + str(answer))
               my_bar.progress(100, text="问题回答完毕")
               st.write(answer)
 

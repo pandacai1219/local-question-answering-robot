@@ -9,7 +9,7 @@ db = faissDB_Utils.create_or_import_to_db('data/liudongxingpipei.docx', persist_
 
 # 查询数据
 query = "流动性匹配率的公式？"
-results = faissDB_Utils.search_documents(persist_directory='dbf', query=query)
+results = faissDB_Utils.search_documents(persist_directory='dbf', query=query, userName='clw')
 
 for i, result in enumerate(results):
     print(f"Result {i + 1}:")
