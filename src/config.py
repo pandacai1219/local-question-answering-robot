@@ -2,12 +2,12 @@ config = {
     "openai_api_key": "your_openai_api_key",
     "users": {
         "user1": {
-            "username": "clw",
+            "username": "监管材料",
             "password": "clw"
         },
         "user2": {
-            "username": "user2_username",
-            "password": "user2_password"
+            "username": "问题资料",
+            "password": "clw"
         },
         "user3": {
             "username": "user3_username",

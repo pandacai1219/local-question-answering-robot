@@ -7,3 +7,4 @@ chardet
 faiss-cpu
 unstructured
 tiktoken
+translate

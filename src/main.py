@@ -11,6 +11,7 @@ import chardet
 from langchain.callbacks import get_openai_callback
 from template import prompt_template_Document, prompt_template_GPT
 from keys import OpenAI_API_KEY2
+from nameFormat import NameFormat
 
 # 设置streamlit页面
 st.set_page_config(
@@ -26,8 +27,8 @@ st.image("./assets/title_image.jpg", width=50)
 # 创建登录表单
 def login():
     with st.form(key='login_form'):
-        st.header("用户登录")
-        username_input = st.text_input("用户名", "", key="username_input")
+        st.header("模块登录")
+        username_input = st.text_input("知识库名称", "", key="username_input")
         password_input = st.text_input("密码", "", key="password_input", type="password")
         submit_button = st.form_submit_button("登录")
         if submit_button:
@@ -41,7 +42,7 @@ def process_login(username, password):
             st.session_state.logged_in = True
             break
     else:
-        st.error("用户名或密码错误")      
+        st.error("知识库名称或密码错误")      
       
 def values_to_session_state(st, values):
     #对以下代码创建一个公共方法
@@ -81,7 +82,7 @@ else:
         print("使用精确搜索方式")
     print(st.session_state.prompt_template)
     #相关参数提供默认值
-    values = {'temperature': 0.7, 'max_context_tokens': 1024, 'max_response_tokens': 256, 'file_chunk_size': 20,'api_key':OpenAI_API_KEY2}
+    values = {'temperature': 0.7, 'max_context_tokens': 2048, 'max_response_tokens': 256, 'file_chunk_size': 300,'api_key':OpenAI_API_KEY2}
     values_to_session_state(st, values)
     # 用户输入
     question = st.text_input("请输入您的问题:", "", key="question_input")
@@ -91,35 +92,43 @@ else:
     # 如果有文件被上传，则在右侧栏中显示文件信息
     if uploaded_file is not None:
         file_details = {"FileName": uploaded_file.name, "FileType": uploaded_file.type}
+
         st.sidebar.write(file_details)
         # 添加一个按钮来触发 read_doc_file 函数
         if st.sidebar.button("执行操作"):
           # 将上传的文件保存到项目主目录的data文件夹中
-          with open(os.path.join("data", uploaded_file.name), "wb") as f:
+          with open(os.path.join("data/file", uploaded_file.name), "wb") as f:
               f.write(uploaded_file.getbuffer())
               st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
           print("1-Reading document...") 
           print(file_details)
           # 读取文档
-          file_path=os.path.join("data", uploaded_file.name)
-          st.session_state.faissDB_Utils.create_or_import_to_db(file_path=file_path, persist_directory='dbf', userName=username)
+          file_path=os.path.join("data/file", uploaded_file.name)
+          st.session_state.faissDB_Utils.create_or_import_to_db(file_path=file_path, filename=uploaded_file.name, userName=username)
           #将data文件夹中的文件迁移至BAK文件夹
-          with open(os.path.join("data", uploaded_file.name), "rb") as f:
+          with open(os.path.join("data/file", uploaded_file.name), "rb") as f:
               data = f.read()
               result = chardet.detect(data)
               file_encoding = result['encoding']
-              print(file_encoding)
+              print(file_encoding)              
           with open(os.path.join("bak", uploaded_file.name), "wb") as f: 
               f.write(data)
+          newFileName=NameFormat.format(name=uploaded_file.name)
+          NameFormat.rename(os.path.join("bak", uploaded_file.name),os.path.join("bak", newFileName))
           #删除data文件夹下的所有文件
-          for root, dirs, files in os.walk("data", topdown=False):
-              for name in files:
-                  os.remove(os.path.join(root, name))
-              for name in dirs:
-                  os.rmdir(os.path.join(root, name))
+          try:
+            for root, dirs, files in os.walk("data/file", topdown=False):
+                for name in files:
+                    os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+          except Exception as e:
+              st.write(f"Error answering question: {e}")
           #streamlit输出提示“文件上传成功”
           st.success("文件上传成功"+str(file_details)+",被切割成"+str(st.session_state.faissDB_Utils.docCount)+"个片段。")
-
+          # 插入文件名数据
+          insert_datetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+          
 
     # 提交按钮
     my_bar = st.progress(0, text="等待投喂问题")
@@ -132,7 +141,7 @@ else:
           print("1-Loading question answering chain..." + str(llm))
           my_bar.progress(10, text="正在加载问题回答模型")
           try:
-              docsearch = langchain_util.search_documents(persist_directory='dbf', query=question, userName=username)
+              docsearch = langchain_util.search_documents(query=question, userName=username)
               print("2-Searching for similar documents..." + str(docsearch))
           
               my_bar.progress(50, text="正在加载问题回答模型")
@@ -149,6 +158,8 @@ else:
               st.write(f"提示令牌数: {cb.prompt_tokens}")
               st.write(f"完成令牌数: {cb.completion_tokens}")
               st.write(f"总成本: {cb.total_cost} 美元")
+              # 插入文件名数据
+              insert_datetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
               # 将答案转换为语音并播放
               if answer:
                 audio = gtts.gTTS(answer, lang='zh-cn')
@@ -204,6 +215,7 @@ else:
         st.sidebar.write(f"上下文最大的Token数: {values['max_context_tokens']}")
         st.sidebar.write(f"每个回复的最大Token数: {values['max_response_tokens']}")
         st.sidebar.write(f"切分每份文件的大小: {values['file_chunk_size']}")
-        
+        st.sidebar.write(f"API KEY:{values['api_key']}")
+
         # Pause for a short period to avoid high CPU usage
         time.sleep(0.1)
