@@ -82,7 +82,7 @@ else:
         print("使用精确搜索方式")
     print(st.session_state.prompt_template)
     #相关参数提供默认值
-    values = {'temperature': 0.7, 'max_context_tokens': 2048, 'max_response_tokens': 256, 'file_chunk_size': 300,'api_key':OpenAI_API_KEY2}
+    values = {'temperature': 0.5, 'max_context_tokens': -1, 'max_response_tokens': -1, 'file_chunk_size': 200,'api_key':OpenAI_API_KEY2}
     values_to_session_state(st, values)
     # 用户输入
     question = st.text_input("请输入您的问题:", "", key="question_input")

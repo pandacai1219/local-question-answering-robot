@@ -28,7 +28,7 @@ class FaissDB_Utils:
         else:
             self.temperature = temperature
         if max_context_tokens is None:
-            self.max_context_tokens = 2048
+            self.max_context_tokens = -1
         else:
             self.max_context_tokens = max_context_tokens
         if prompt_template is None:
@@ -41,7 +41,7 @@ class FaissDB_Utils:
         print(f"self.file_chunk_size：{self.file_chunk_size}")
         print(f"self.api_key：{self.api_key}")
         self.embeddings = OpenAIEmbeddings(openai_api_key=self.api_key)
-        self.text_splitter = CharacterTextSplitter(chunk_size=self.file_chunk_size, chunk_overlap=30)
+        self.text_splitter = CharacterTextSplitter(chunk_size=self.file_chunk_size, chunk_overlap=0)
         self.llm = OpenAI(temperature=self.temperature, max_tokens=self.max_context_tokens, openai_api_key=self.api_key)
         PROMPT = PromptTemplate(template=self.prompt_template, input_variables=["context", "question"])
         print(str(PROMPT))

@@ -4,3 +4,5 @@ dbf/*
 bak/*
 #忽略主目录下的answer.wav
 answer.wav
+#忽略src下的keys.py
+src/keys.py
