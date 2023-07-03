@@ -12,6 +12,7 @@ from langchain.callbacks import get_openai_callback
 from template import prompt_template_Document, prompt_template_GPT
 from keys import OpenAI_API_KEY2
 from nameFormat import NameFormat
+from logger_config import logger
 
 # 设置streamlit页面
 st.set_page_config(
@@ -64,6 +65,7 @@ if not st.session_state.get('logged_in', False):
 else:
     # 如果用户已登录，则显示应用程序内容
     st.write(f"欢迎回来，{st.session_state.username}！")
+    logger.info(f"欢迎回来，{st.session_state.username}！")
     # 页面标题
     st.title("问答机器人")
 
@@ -75,12 +77,12 @@ else:
     if is_suggestion:
         # 使用联想搜索方式
         st.session_state.prompt_template = prompt_template_GPT
-        print("使用联想搜索方式")
+        logger.info("使用联想搜索方式")
     else:
         # 使用精确搜索方式
         st.session_state.prompt_template = prompt_template_Document
-        print("使用精确搜索方式")
-    print(st.session_state.prompt_template)
+        logger.info("使用精确搜索方式")
+    logger.info(st.session_state.prompt_template)
     #相关参数提供默认值
     values = {'temperature': 0.5, 'max_context_tokens': -1, 'max_response_tokens': -1, 'file_chunk_size': 200,'api_key':OpenAI_API_KEY2}
     values_to_session_state(st, values)
@@ -100,8 +102,8 @@ else:
           with open(os.path.join("data/file", uploaded_file.name), "wb") as f:
               f.write(uploaded_file.getbuffer())
               st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
-          print("1-Reading document...") 
-          print(file_details)
+          logger.info("1-Reading document...") 
+          logger.info(file_details)
           # 读取文档
           file_path=os.path.join("data/file", uploaded_file.name)
           st.session_state.faissDB_Utils.create_or_import_to_db(file_path=file_path, filename=uploaded_file.name, userName=username)
@@ -110,7 +112,7 @@ else:
               data = f.read()
               result = chardet.detect(data)
               file_encoding = result['encoding']
-              print(file_encoding)              
+              logger.info(file_encoding)              
           with open(os.path.join("bak", uploaded_file.name), "wb") as f: 
               f.write(data)
           newFileName=NameFormat.format(name=uploaded_file.name)
@@ -134,32 +136,32 @@ else:
     my_bar = st.progress(0, text="等待投喂问题")
     if st.button("提交", key="submit_button"):
         if question:
-          print("0-Loading..." + str(question))
+          logger.info("0-Loading..." + str(question))
           st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
           langchain_util = st.session_state.faissDB_Utils
           llm = langchain_util.llm
-          print("1-Loading question answering chain..." + str(llm))
+          logger.info("1-Loading question answering chain..." + str(llm))
           my_bar.progress(10, text="正在加载问题回答模型")
           try:
               docsearch = langchain_util.search_documents(query=question, userName=username)
-              print("2-Searching for similar documents..." + str(docsearch))
+              logger.info("2-Searching for similar documents..." + str(docsearch))
           
               my_bar.progress(50, text="正在加载问题回答模型")
               chain = langchain_util.chain
-              print("3-Answering question..." + str(chain))
+              logger.info("3-Answering question..." + str(chain))
               my_bar.progress(80, text="正在回答问题")
               with get_openai_callback() as cb:
                 answer = chain.run(input_documents=docsearch, question=question, verbose=True)
-              print("4-Answering question..." + str(answer))
+              logger.info("4-Answering question..." + str(answer))
               my_bar.progress(100, text="问题回答完毕")
-              st.write(answer)
+
+              st.success(answer,icon="🤖")
 
               st.write(f"总令牌数: {cb.total_tokens}")
               st.write(f"提示令牌数: {cb.prompt_tokens}")
               st.write(f"完成令牌数: {cb.completion_tokens}")
               st.write(f"总成本: {cb.total_cost} 美元")
-              # 插入文件名数据
-              insert_datetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
               # 将答案转换为语音并播放
               if answer:
                 audio = gtts.gTTS(answer, lang='zh-cn')
@@ -169,6 +171,7 @@ else:
                 os.remove('answer.wav')
           except Exception as e:
               st.write(f"Error answering question: {e}")
+              logger.error(f"Error answering question: {e}")
         else:
             st.warning("请输入问题。")
 
@@ -180,17 +183,17 @@ else:
         expander.write("参数")
         with expander:
           with st.form("settings_form"):
-              st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
-              temperature = st.slider("温度", min_value=0.0, max_value=1.0, step=0.05, value=0.7)
-              st.markdown("</div>", unsafe_allow_html=True)
+              #st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
+              #temperature = st.slider("温度", min_value=0.0, max_value=1.0, step=0.05, value=0.7)
+              #st.markdown("</div>", unsafe_allow_html=True)
               
-              st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
-              max_context_tokens = st.slider("上下文最大的Token数", min_value=500, max_value=4096, step=200, value=1024)
-              st.markdown("</div>", unsafe_allow_html=True)
+              #st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
+              #max_context_tokens = st.slider("上下文最大的Token数", min_value=500, max_value=4096, step=200, value=1024)
+              #st.markdown("</div>", unsafe_allow_html=True)
               
-              st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
-              max_response_tokens = st.slider("每个回复的最大Token数", min_value=256, max_value=4096, step=200, value=500)
-              st.markdown("</div>", unsafe_allow_html=True)
+              #st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
+              #max_response_tokens = st.slider("每个回复的最大Token数", min_value=256, max_value=4096, step=200, value=500)
+              #st.markdown("</div>", unsafe_allow_html=True)
 
               st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
               file_chunk_size = st.slider("切分每份文件的大小", min_value=50, max_value=1000, step=50, value=100)
@@ -203,16 +206,16 @@ else:
 
     if submit_button:
         # Update variables with the current slider values
-        values['temperature'] = temperature
-        values['max_context_tokens'] = max_context_tokens
-        values['max_response_tokens'] = max_response_tokens
+        #values['temperature'] = temperature
+        #values['max_context_tokens'] = max_context_tokens
+        #values['max_response_tokens'] = max_response_tokens
         values['file_chunk_size'] = file_chunk_size
         values['api_key'] = api_key
         values_to_session_state(st, values)
 
         # Display the current values
-        st.sidebar.write(f"温度: {values['temperature']}")
-        st.sidebar.write(f"上下文最大的Token数: {values['max_context_tokens']}")
+        #st.sidebar.write(f"温度: {values['temperature']}")
+        #st.sidebar.write(f"上下文最大的Token数: {values['max_context_tokens']}")
         st.sidebar.write(f"每个回复的最大Token数: {values['max_response_tokens']}")
         st.sidebar.write(f"切分每份文件的大小: {values['file_chunk_size']}")
         st.sidebar.write(f"API KEY:{values['api_key']}")

@@ -9,9 +9,8 @@ from langchain.llms import OpenAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 from template import prompt_template_Document, prompt_template_GPT
-import faiss
 import pickle
-from typing import Any
+from logger_config import logger
 
 class FaissDB_Utils:
     def __init__(self, api_key=None,prompt_template=None,temperature=None,max_context_tokens=None,max_response_tokens=None,file_chunk_size=None):
@@ -35,23 +34,23 @@ class FaissDB_Utils:
             self.prompt_template = prompt_template_Document
         else:
             self.prompt_template = prompt_template
-        print(f"self.prompt_template：{self.prompt_template}")
-        print(f"self.temperature：{self.temperature}")
-        print(f"self.max_context_tokens：{self.max_context_tokens}")
-        print(f"self.file_chunk_size：{self.file_chunk_size}")
-        print(f"self.api_key：{self.api_key}")
+        logger.info(f"self.prompt_template：{self.prompt_template}")
+        logger.info(f"self.temperature：{self.temperature}")
+        logger.info(f"self.max_context_tokens：{self.max_context_tokens}")
+        logger.info(f"self.file_chunk_size：{self.file_chunk_size}")
+        logger.info(f"self.api_key：{self.api_key}")
         self.embeddings = OpenAIEmbeddings(openai_api_key=self.api_key)
         self.text_splitter = CharacterTextSplitter(chunk_size=self.file_chunk_size, chunk_overlap=0)
         self.llm = OpenAI(temperature=self.temperature, max_tokens=self.max_context_tokens, openai_api_key=self.api_key)
         PROMPT = PromptTemplate(template=self.prompt_template, input_variables=["context", "question"])
-        print(str(PROMPT))
+        logger.info(str(PROMPT))
         self.chain = load_qa_chain(llm=self.llm, chain_type='stuff', verbose=True, prompt=PROMPT)
         self.docCount = 0
 
     def create_or_import_to_db(self, file_path, filename=None,userName=None):
         db = None
         folder_path="dbf/"+userName
-        print(f"folder_path：{folder_path}")
+        logger.info(f"folder_path：{folder_path}")
         # 根据文件类型加载文档
         if file_path.endswith(".docx") or file_path.endswith(".doc"):
             loader = UnstructuredWordDocumentLoader(file_path)
@@ -63,10 +62,10 @@ class FaissDB_Utils:
             raise ValueError(f"Unsupported file format: {file_path}")
 
         documents = loader.load()
-        print(str(documents))
+        logger.info(str(documents))
         docs = self.text_splitter.split_documents(documents)
 
-        print(f"Found {len(docs)} documents in {file_path}")
+        logger.info(f"Found {len(docs)} documents in {file_path}")
         self.docCount=len(docs)
         db_local=None
         try:
@@ -81,10 +80,10 @@ class FaissDB_Utils:
         except Exception as e:
             db = FAISS.from_documents(documents=docs, embedding=self.embeddings)
             db.save_local(folder_path=folder_path, index_name=userName)
-            print(f"Error loading db: {e}")
+            logger.error(f"Error loading db: {e}")
 
 
-        print(f"Saved db to {filename}{userName}")
+        logger.info(f"Saved db to {filename}{userName}")
 
     def get_document_by_vector_id(vector_id):
         with open("index.pkl", "rb") as f:
@@ -95,7 +94,7 @@ class FaissDB_Utils:
 
     def search_documents(self, query, userName=None):
         folder_path="dbf/"+userName
-        print(f"folder_path：{folder_path}")
+        logger.info(f"folder_path：{folder_path}")
 
         db = FAISS.load_local(index_name=userName,embeddings=self.embeddings,folder_path=folder_path)
 
