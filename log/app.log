@@ -85,3 +85,765 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2023-07-03 21:48:12,312 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
 2023-07-03 21:48:14,666 - INFO - 4-Answering question...´°ÍâÓĞÉ«²Ê°ßìµµÄ»­¾í£¬³äÂú¾ªÏ²ºÍ»îÁ¦µÄÆæÃîÊÀ½ç£¬·á¸»¶à²ÊµÄ·ç¾°¡£
 2023-07-03 21:48:14,668 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-04 22:02:58,594 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:02:58,597 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:02:58,598 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:09:32,275 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:09:32,278 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:09:32,279 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:09:36,747 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:09:36,748 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:09:36,749 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:09:36,752 - INFO - Start Batch import
+2023-07-04 22:12:07,364 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:12:07,366 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:12:07,367 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:12:10,455 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:12:10,457 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:12:10,458 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:12:10,461 - INFO - Start Batch import
+2023-07-04 22:12:10,462 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:12:10,463 - INFO - self.temperature£º0.5
+2023-07-04 22:12:10,464 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:12:10,464 - INFO - self.file_chunk_size£º200
+2023-07-04 22:12:10,465 - INFO - self.api_key£º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
+2023-07-04 22:12:10,510 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:12:10,512 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:12:12,112 - INFO - [Document(page_content='¡¶½ÌÊÒ´°Íâ¡·\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Ò»¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄÃÀÀöĞ£Ô°¡£Ã¿ÌìÀ´µ½ÕâÀï£¬ÎÒÃÇ¶¼³äÂúÁË¶ÔÖªÊ¶µÄºÃÆæºÍ¶ÔÉú»îµÄÈÈ°®¡£ÔÚÕâÀï£¬ÎÒÒªÏò´ó¼Ò½éÉÜÒ»¸öÈÃÎÒÁ÷Á¬Íü·µµÄµØ·½£¬ÄÇ¾ÍÊÇÎÒÃÇ½ÌÊÒ´°ÍâµÄ·ç¾°¡£\n\n×øÔÚ½ÌÊÒÀï£¬ÎÒ»á²»×Ô¾õµØ±»´°ÍâµÄÃÀ¾°ÎüÒı¡£´°Íâ£¬ÄÇÂÌÒâ°»È»µÄÊ÷Ä¾£¬·Â·ğÒ»¸ö¡°ÂÌÉ«É­ÁÖµ¹Ó°¡±£¬ÎªĞ£Ô°ÔöÌíÁËÒ»µÀÁÁÀöµÄ·ç¾°Ïß¡£ÔÚÄÇÆ¬ÂÌÒâÖĞ£¬ÓĞ¼¸Ö»èòèòÈçÉúµÄ¡°ÁÖÖĞÓã¡±µñËÜ£¬ËüÃÇÔÚÑô¹âµÄÕÕÉäÏÂÉÁ×Å¹âÁÁ£¬Éú¶¯¶ø¿É°®¡£ÎÒ»áÊ±²»Ê±µØÏëÏó£¬ËüÃÇÊÇ²»ÊÇÒ²ÔÚÏòÎÒÃÇÕâĞ©ÇóÖªµÄĞ¡Ñ§Éú´«µİ×ÅËüÃÇµÄÖÇ»ÛÄØ£¿\n\nÔÙÍùÇ°¿´£¬´°ÍâÊÇÄÇÌõÇå³º¼ûµ×µÄ¡°Ô´Í·Ë®¡±£¬Ë®ÖĞµÄĞ¡Óã¶ù»¶¿ìµØÓÎ¶¯×Å£¬ÈÃÈËÌÕ×íÆäÖĞ¡£Ã¿µ±¿Î¼äĞİÏ¢£¬ÎÒÃÇ»áºÍÍ¬Ñ§ÃÇÒ»Æğ×ßµ½´°Íâ£¬ĞÀÉÍÕâĞ©ÃÀÀöµÄ¾°Îï£¬Ì¸ÂÛ×ÅÑ§Ï°ºÍÉú»îµÄÈ¤ÊÂ¡£\n\n´°Íâ»¹ÓĞÄÇ¶À¾ß½³ĞÄµÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ÕâÀï²¼ÂúÁËÃûÑÔ¾¯¾ä£¬Ê±¿ÌÌáĞÑ×ÅÎÒÃÇÒªÇÚ·ÜÑ§Ï°£¬³ÉÎªµÂÖÇÌåÃÀÈ«Ãæ·¢Õ¹µÄÈË¡£³¤ÀÈÅÔ±ß±ãÊÇÄÇÉ«²Ê°ßìµµÄĞ¡»¨Ì³£¬Îå²Ê°ßìµµÄ»¨¶ä¶ùÔÚÑô¹âÏÂÕùÑŞ¶·Àö£¬É¢·¢×Åµ­µ­µÄ·Ò·¼£¬ÈÃÈËĞÄ¿õÉñâù¡£\n\n³ı´ËÖ®Íâ£¬»¹ÓĞÄÇÒıÈË×¢Ä¿µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±£¬ËüÃÇÔÚÌáĞÑ×ÅÎÒÃÇ£¬Ñ§Ï°ÊÇÒ»±²×ÓµÄÊÂ£¬Ö»ÓĞ²»¶ÏµØÑ§Ï°£¬²ÅÄÜÈÃ×Ô¼º±äµÃ¸ü¼ÓÓÅĞã¡£\n\n½ÌÊÒ´°ÍâµÄ·ç¾°ÃÀÀö¶ø¸»ÓĞÒâÒå£¬ÕâĞ©¾°Îï¼ûÖ¤ÁËÎÒÃÇÒ»ÌìÌìµÄ³É³¤£¬Ò²¼ûÖ¤ÁËÎÒÃÇÔÚÕâÀï¶È¹ıµÄ¿ìÀÖÊ±¹â¡£ËüÃÇ¼¤Àø×ÅÎÒÃÇÅ¬Á¦Ñ§Ï°£¬×·Çó×¿Ô½£¬³ÉÎªÒ»¸ö¡°ÌÃÌÃÕıÕıµÄÖĞ¹úÈË£¬ĞØ»³×æ¹úµÄÊÀ½çÈË¡±¡£\n\nÔÚÕâÀï£¬ÎÒÃÇÑ§»áÁËÕäÏ§Ê±¼ä£¬Ñ§»áÁË¸Ğ¶÷Ê¦³¤ºÍÍ¬°éÃÇµÄÅã°é¡£Ã¿Ò»´¦´°ÍâµÄ·ç¾°¶¼ÈÚÈëÁËÎÒÃÇ³É³¤µÄµãµÎ»ØÒä£¬ËüÃÇ²»½öÃÀ»¯ÁËÎÒÃÇµÄÊÓÒ°£¬Ò²ÃÀ»¯ÁËÎÒÃÇµÄĞÄÁé¡£\n\nÕ¾ÔÚ½ÌÊÒ´°¿Ú£¬ÎÒÏë¶Ô´°ÍâµÄ·ç¾°ËµÉùĞ»Ğ»£¬Ğ»Ğ»ËüÃÇ¸øÎÒÃÇ´øÀ´µÄÃÀºÃºÍ¿ìÀÖ¡£ÔÚÎ´À´µÄÈÕ×ÓÀï£¬ÎÒÃÇÒª¼ÌĞøÅ¬Á¦£¬ÎªÊµÏÖ×Ô¼ºµÄÃÎÏë¶øÆ´²«£¬Îª×æ¹úµÄ·±ÈÙºÍÊÀ½çµÄºÍÆ½¹±Ï××Ô¼ºµÄÁ¦Á¿¡£\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Õâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°£¬½«ÓÀÔ¶ÁôÔÚÎÒÃÇĞÄÖĞ¡£¶ø½ÌÊÒ´°ÍâµÄ·ç¾°£¬Ò²½«³ÉÎªÎÒÃÇÓÀÔ¶Õä²ØµÄÃÀºÃ»ØÒä£¬Åã°éÎÒÃÇ×ß¹ıÈËÉúµÄÃ¿Ò»¸ö½×¶Î¡£\n\n<PAGE BREAK>\n\n¡¶´°ÍâµÄÆæÃîÊÀ½ç¡·\n\nÔÚº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§µÄ½ÌÊÒÀï£¬Ã¿µ±ÎÒÌ§Í·ÍûÏò´°Íâ£¬×Ü»á·¢ÏÖÒ»¸ö³äÂú¾ªÏ²ºÍ»îÁ¦µÄÆæÃîÊÀ½ç¡£ÓÌÈçÒ»·ùÉ«²Ê°ßìµµÄ»­¾í£¬Õ¹ÏÖÔÚÎÒÑÛÇ°¡£\n\n´°Íâ£¬ÂÌÉ«É­ÁÖµ¹Ó°µÄÊ÷Ä¾ÔÚÑô¹âÏÂÒ¡Ò·Éú×Ë£¬·Â·ğÔÚÌø¶¯×Å»¶¿ìµÄÎèµ¸¡£ÓĞÊ±£¬¼¸Ö»Ğ¡ÄñÔÚÊ÷Ö¦¼ä»¶½Ğ£¬ÎªÕâ¾²Ú×µÄĞ£Ô°´øÀ´ÁËÉúÆø¡£¾ÍÔÚÊ÷Ä¾µÄÅÔ±ß£¬ÄÇ¼¸Ö»º©Ì¬¿ÉŞäµÄ¡°ÁÖÖĞÓã¡±µñËÜºÃÏñÔÚÏòÎÒÃÇÕ£ÑÛÊ¾Òâ£¬°µÊ¾×ÅËüÃÇÒ²ÔÚÓëÎÒÃÇÒ»ÆğÌ½Ë÷ÖªÊ¶µÄº£Ñó¡£\n\n½ÌÊÒ´°ÍâµÄ¡°Ô´Í·Ë®¡±×ÜÊÇÇå³º¼ûµ×£¬Ë®ÖĞµÄĞ¡Óã¶ùÓÎµÃ»¶¿ì¶ø×ÔÓÉ¡£Ã¿µ±¿Î¼ä£¬ÎÒºÍÍ¬Ñ§ÃÇ»áÀ´µ½´°Íâ£¬Ò»±ß¹ÛÉÍÕâĞ©¿ìÀÖµÄĞ¡ÉúÃü£¬Ò»±ßÕùÂÛ×ÅË­¼ÒµÄ½ğÓã×îÃÀ¡£ÎÒÃÇµÄ»¶ÉùĞ¦Óï£¬»ã³ÉÁËÃÀÃîµÄĞıÂÉ£¬Ïì³¹ÔÚÕâÆ¬ÃÀÀöµÄĞ£Ô°Àï¡£\n\nÔÙ¿´ÄÇ¶À¾ßÌØÉ«µÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ËüÏñÒ»Î»¸ºÔğÈÎµÄÀÏÊ¦£¬ÓÃÃûÑÔ¾¯¾ä¼¤ÀøÎÒÃÇÇÚ·ÜÏòÉÏ¡£¶ø½ô°¤×Å³¤ÀÈµÄÄÇÒ»Æ¬Îå²Ê°ßìµµÄĞ¡»¨Ì³£¬¸üÊÇÈÃÈËÑÛÇ°Ò»ÁÁ¡£ÓĞÊ±ºò£¬ºûµûÔÚ»¨¶ä¼äôæôæÆğÎè£¬¸øÎÒÃÇ´øÀ´ÁËÎŞ¾¡µÄ»¶Óä¡£\n\n½ÌÊÒ´°Íâ»¹ÓĞÄÇÒıÈËÈëÊ¤µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±¡£ÕâÀï£¬ÎÒÃÇºÍÍ¬Ñ§ÃÇÒ»ÆğÍæË££¬Ò»±ßÑ§Ï°£¬Ò»±ßæÒÏ·¡£ÄÇÊ±£¬»¶Ğ¦Éù¡¢ÕÆÉù¡¢ÔŞÃÀÉù´ËÆğ±Ë·ü£¬³äÂúÁË»îÁ¦¡£\n\n´°ÍâµÄ·ç¾°×ÜÊÇÄÇÃ´·á¸»¶à²Ê£¬ÈÃÎÒÃÇÔÚ¿ìÀÖÖĞ³É³¤¡£ËüÃÇ¼ûÖ¤ÁËÎÒÃÇ´ÓÖÉÄÛ×ßÏò³ÉÊìµÄ¹ı³Ì£¬Ò²¼ûÖ¤ÁËÎÒÃÇÓëÊ¦³¤¡¢Í¬°éÖ®¼äÉîºñµÄÓÑÒê¡£ÔÚÕâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°Àï£¬ÎÒÃÇÑ§»áÁËÕäÏ§Ã¿Ò»¸öÃÀºÃË²¼ä£¬¸Ğ¶÷ÕâÒ»ÇĞÅã°éÎÒÃÇ³É³¤µÄÈËºÍÊÂ¡£ÔÚÕâÀï£¬ÎÒÃÇÑ§»áÁËÓÂ¸ÒÃæ¶ÔÀ§ÄÑ£¬°ÑÎÕÃ¿Ò»¸ö»ú»áÈ¥×·ÇóÃÎÏë¡£\n\n´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£\n\nÕâ¸ö³äÂúÉú»úÓë»îÁ¦µÄĞ£Ô°£¬ÎªÎÒÃÇÌá¹©ÁËÒ»¸öÕ¹³á°¿ÏèµÄÎèÌ¨¡£½ÌÊÒ´°ÍâµÄ·ç¾°£¬¾ÍÏñÒ»°ÑÄ§·¨°ô£¬ÎªÎÒÃÇ´øÀ´ÁËÓÂÆø¡¢ÖÇ»ÛºÍÁ¦Á¿¡£ÎÒÃÇÒªÕäÏ§ÔÚÕâÀï¶È¹ıµÄÃ¿Ò»Ìì£¬ÓÀÔ¶Ãú¼ÇÕâĞ©ÃÀºÃµÄË²¼ä¡£\n\nÔÚÎ´À´µÄËêÔÂÀï£¬ÎÒÃÇ½«¼ÌĞøÅ¬Á¦£¬ÎªÊµÏÖÃÎÏë¶ø·Ü¶·£¬Îª×æ¹úµÄ·±ÈÙºÍÊÀ½çµÄºÍÆ½¹±Ï×ÎÒÃÇµÄÁ¦Á¿¡£¶øÄÇĞ©½ÌÊÒ´°ÍâµÄÃÀÀö·ç¾°£¬½«ÓÀÔ¶Ãú¿ÌÔÚÎÒÃÇĞÄÖĞ£¬Åã°éÎÒÃÇ×ß¹ıÈËÉúµÄÃ¿Ò»¸ö½×¶Î£¬¼¤ÀøÎÒÃÇ²»¶ÏÇ°½ø¡£\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Õâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°£¬½«ÓÀÔ¶ÁôÔÚÎÒÃÇĞÄÖĞ¡£¶ø½ÌÊÒ´°ÍâµÄ·ç¾°£¬Ò²½«³ÉÎªÎÒÃÇÓÀÔ¶Õä²ØµÄÃÀºÃ»ØÒä¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:12:12,115 - INFO - Found 13 documents in data/file
+2023-07-04 22:12:12,302 - INFO - Loading faiss with AVX2 support.
+2023-07-04 22:12:12,303 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-04 22:12:12,303 - INFO - Loading faiss.
+2023-07-04 22:12:12,455 - INFO - Successfully loaded faiss.
+2023-07-04 22:12:14,367 - INFO - error_code=invalid_api_key error_message='Incorrect API key provided: sk-bISpw***************************************GVLz. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+2023-07-04 22:14:53,184 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:14:53,186 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:14:53,187 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:14:55,935 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:14:55,937 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:14:55,938 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:14:55,940 - INFO - Start Batch import
+2023-07-04 22:14:55,941 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:14:55,943 - INFO - self.temperature£º0.5
+2023-07-04 22:14:55,943 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:14:55,944 - INFO - self.file_chunk_size£º200
+2023-07-04 22:14:55,944 - INFO - self.api_key£º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
+2023-07-04 22:14:55,972 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:14:55,974 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:14:57,097 - INFO - [Document(page_content='¡¶½ÌÊÒ´°Íâ¡·\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Ò»¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄÃÀÀöĞ£Ô°¡£Ã¿ÌìÀ´µ½ÕâÀï£¬ÎÒÃÇ¶¼³äÂúÁË¶ÔÖªÊ¶µÄºÃÆæºÍ¶ÔÉú»îµÄÈÈ°®¡£ÔÚÕâÀï£¬ÎÒÒªÏò´ó¼Ò½éÉÜÒ»¸öÈÃÎÒÁ÷Á¬Íü·µµÄµØ·½£¬ÄÇ¾ÍÊÇÎÒÃÇ½ÌÊÒ´°ÍâµÄ·ç¾°¡£\n\n×øÔÚ½ÌÊÒÀï£¬ÎÒ»á²»×Ô¾õµØ±»´°ÍâµÄÃÀ¾°ÎüÒı¡£´°Íâ£¬ÄÇÂÌÒâ°»È»µÄÊ÷Ä¾£¬·Â·ğÒ»¸ö¡°ÂÌÉ«É­ÁÖµ¹Ó°¡±£¬ÎªĞ£Ô°ÔöÌíÁËÒ»µÀÁÁÀöµÄ·ç¾°Ïß¡£ÔÚÄÇÆ¬ÂÌÒâÖĞ£¬ÓĞ¼¸Ö»èòèòÈçÉúµÄ¡°ÁÖÖĞÓã¡±µñËÜ£¬ËüÃÇÔÚÑô¹âµÄÕÕÉäÏÂÉÁ×Å¹âÁÁ£¬Éú¶¯¶ø¿É°®¡£ÎÒ»áÊ±²»Ê±µØÏëÏó£¬ËüÃÇÊÇ²»ÊÇÒ²ÔÚÏòÎÒÃÇÕâĞ©ÇóÖªµÄĞ¡Ñ§Éú´«µİ×ÅËüÃÇµÄÖÇ»ÛÄØ£¿\n\nÔÙÍùÇ°¿´£¬´°ÍâÊÇÄÇÌõÇå³º¼ûµ×µÄ¡°Ô´Í·Ë®¡±£¬Ë®ÖĞµÄĞ¡Óã¶ù»¶¿ìµØÓÎ¶¯×Å£¬ÈÃÈËÌÕ×íÆäÖĞ¡£Ã¿µ±¿Î¼äĞİÏ¢£¬ÎÒÃÇ»áºÍÍ¬Ñ§ÃÇÒ»Æğ×ßµ½´°Íâ£¬ĞÀÉÍÕâĞ©ÃÀÀöµÄ¾°Îï£¬Ì¸ÂÛ×ÅÑ§Ï°ºÍÉú»îµÄÈ¤ÊÂ¡£\n\n´°Íâ»¹ÓĞÄÇ¶À¾ß½³ĞÄµÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ÕâÀï²¼ÂúÁËÃûÑÔ¾¯¾ä£¬Ê±¿ÌÌáĞÑ×ÅÎÒÃÇÒªÇÚ·ÜÑ§Ï°£¬³ÉÎªµÂÖÇÌåÃÀÈ«Ãæ·¢Õ¹µÄÈË¡£³¤ÀÈÅÔ±ß±ãÊÇÄÇÉ«²Ê°ßìµµÄĞ¡»¨Ì³£¬Îå²Ê°ßìµµÄ»¨¶ä¶ùÔÚÑô¹âÏÂÕùÑŞ¶·Àö£¬É¢·¢×Åµ­µ­µÄ·Ò·¼£¬ÈÃÈËĞÄ¿õÉñâù¡£\n\n³ı´ËÖ®Íâ£¬»¹ÓĞÄÇÒıÈË×¢Ä¿µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±£¬ËüÃÇÔÚÌáĞÑ×ÅÎÒÃÇ£¬Ñ§Ï°ÊÇÒ»±²×ÓµÄÊÂ£¬Ö»ÓĞ²»¶ÏµØÑ§Ï°£¬²ÅÄÜÈÃ×Ô¼º±äµÃ¸ü¼ÓÓÅĞã¡£\n\n½ÌÊÒ´°ÍâµÄ·ç¾°ÃÀÀö¶ø¸»ÓĞÒâÒå£¬ÕâĞ©¾°Îï¼ûÖ¤ÁËÎÒÃÇÒ»ÌìÌìµÄ³É³¤£¬Ò²¼ûÖ¤ÁËÎÒÃÇÔÚÕâÀï¶È¹ıµÄ¿ìÀÖÊ±¹â¡£ËüÃÇ¼¤Àø×ÅÎÒÃÇÅ¬Á¦Ñ§Ï°£¬×·Çó×¿Ô½£¬³ÉÎªÒ»¸ö¡°ÌÃÌÃÕıÕıµÄÖĞ¹úÈË£¬ĞØ»³×æ¹úµÄÊÀ½çÈË¡±¡£\n\nÔÚÕâÀï£¬ÎÒÃÇÑ§»áÁËÕäÏ§Ê±¼ä£¬Ñ§»áÁË¸Ğ¶÷Ê¦³¤ºÍÍ¬°éÃÇµÄÅã°é¡£Ã¿Ò»´¦´°ÍâµÄ·ç¾°¶¼ÈÚÈëÁËÎÒÃÇ³É³¤µÄµãµÎ»ØÒä£¬ËüÃÇ²»½öÃÀ»¯ÁËÎÒÃÇµÄÊÓÒ°£¬Ò²ÃÀ»¯ÁËÎÒÃÇµÄĞÄÁé¡£\n\nÕ¾ÔÚ½ÌÊÒ´°¿Ú£¬ÎÒÏë¶Ô´°ÍâµÄ·ç¾°ËµÉùĞ»Ğ»£¬Ğ»Ğ»ËüÃÇ¸øÎÒÃÇ´øÀ´µÄÃÀºÃºÍ¿ìÀÖ¡£ÔÚÎ´À´µÄÈÕ×ÓÀï£¬ÎÒÃÇÒª¼ÌĞøÅ¬Á¦£¬ÎªÊµÏÖ×Ô¼ºµÄÃÎÏë¶øÆ´²«£¬Îª×æ¹úµÄ·±ÈÙºÍÊÀ½çµÄºÍÆ½¹±Ï××Ô¼ºµÄÁ¦Á¿¡£\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Õâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°£¬½«ÓÀÔ¶ÁôÔÚÎÒÃÇĞÄÖĞ¡£¶ø½ÌÊÒ´°ÍâµÄ·ç¾°£¬Ò²½«³ÉÎªÎÒÃÇÓÀÔ¶Õä²ØµÄÃÀºÃ»ØÒä£¬Åã°éÎÒÃÇ×ß¹ıÈËÉúµÄÃ¿Ò»¸ö½×¶Î¡£\n\n<PAGE BREAK>\n\n¡¶´°ÍâµÄÆæÃîÊÀ½ç¡·\n\nÔÚº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§µÄ½ÌÊÒÀï£¬Ã¿µ±ÎÒÌ§Í·ÍûÏò´°Íâ£¬×Ü»á·¢ÏÖÒ»¸ö³äÂú¾ªÏ²ºÍ»îÁ¦µÄÆæÃîÊÀ½ç¡£ÓÌÈçÒ»·ùÉ«²Ê°ßìµµÄ»­¾í£¬Õ¹ÏÖÔÚÎÒÑÛÇ°¡£\n\n´°Íâ£¬ÂÌÉ«É­ÁÖµ¹Ó°µÄÊ÷Ä¾ÔÚÑô¹âÏÂÒ¡Ò·Éú×Ë£¬·Â·ğÔÚÌø¶¯×Å»¶¿ìµÄÎèµ¸¡£ÓĞÊ±£¬¼¸Ö»Ğ¡ÄñÔÚÊ÷Ö¦¼ä»¶½Ğ£¬ÎªÕâ¾²Ú×µÄĞ£Ô°´øÀ´ÁËÉúÆø¡£¾ÍÔÚÊ÷Ä¾µÄÅÔ±ß£¬ÄÇ¼¸Ö»º©Ì¬¿ÉŞäµÄ¡°ÁÖÖĞÓã¡±µñËÜºÃÏñÔÚÏòÎÒÃÇÕ£ÑÛÊ¾Òâ£¬°µÊ¾×ÅËüÃÇÒ²ÔÚÓëÎÒÃÇÒ»ÆğÌ½Ë÷ÖªÊ¶µÄº£Ñó¡£\n\n½ÌÊÒ´°ÍâµÄ¡°Ô´Í·Ë®¡±×ÜÊÇÇå³º¼ûµ×£¬Ë®ÖĞµÄĞ¡Óã¶ùÓÎµÃ»¶¿ì¶ø×ÔÓÉ¡£Ã¿µ±¿Î¼ä£¬ÎÒºÍÍ¬Ñ§ÃÇ»áÀ´µ½´°Íâ£¬Ò»±ß¹ÛÉÍÕâĞ©¿ìÀÖµÄĞ¡ÉúÃü£¬Ò»±ßÕùÂÛ×ÅË­¼ÒµÄ½ğÓã×îÃÀ¡£ÎÒÃÇµÄ»¶ÉùĞ¦Óï£¬»ã³ÉÁËÃÀÃîµÄĞıÂÉ£¬Ïì³¹ÔÚÕâÆ¬ÃÀÀöµÄĞ£Ô°Àï¡£\n\nÔÙ¿´ÄÇ¶À¾ßÌØÉ«µÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ËüÏñÒ»Î»¸ºÔğÈÎµÄÀÏÊ¦£¬ÓÃÃûÑÔ¾¯¾ä¼¤ÀøÎÒÃÇÇÚ·ÜÏòÉÏ¡£¶ø½ô°¤×Å³¤ÀÈµÄÄÇÒ»Æ¬Îå²Ê°ßìµµÄĞ¡»¨Ì³£¬¸üÊÇÈÃÈËÑÛÇ°Ò»ÁÁ¡£ÓĞÊ±ºò£¬ºûµûÔÚ»¨¶ä¼äôæôæÆğÎè£¬¸øÎÒÃÇ´øÀ´ÁËÎŞ¾¡µÄ»¶Óä¡£\n\n½ÌÊÒ´°Íâ»¹ÓĞÄÇÒıÈËÈëÊ¤µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±¡£ÕâÀï£¬ÎÒÃÇºÍÍ¬Ñ§ÃÇÒ»ÆğÍæË££¬Ò»±ßÑ§Ï°£¬Ò»±ßæÒÏ·¡£ÄÇÊ±£¬»¶Ğ¦Éù¡¢ÕÆÉù¡¢ÔŞÃÀÉù´ËÆğ±Ë·ü£¬³äÂúÁË»îÁ¦¡£\n\n´°ÍâµÄ·ç¾°×ÜÊÇÄÇÃ´·á¸»¶à²Ê£¬ÈÃÎÒÃÇÔÚ¿ìÀÖÖĞ³É³¤¡£ËüÃÇ¼ûÖ¤ÁËÎÒÃÇ´ÓÖÉÄÛ×ßÏò³ÉÊìµÄ¹ı³Ì£¬Ò²¼ûÖ¤ÁËÎÒÃÇÓëÊ¦³¤¡¢Í¬°éÖ®¼äÉîºñµÄÓÑÒê¡£ÔÚÕâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°Àï£¬ÎÒÃÇÑ§»áÁËÕäÏ§Ã¿Ò»¸öÃÀºÃË²¼ä£¬¸Ğ¶÷ÕâÒ»ÇĞÅã°éÎÒÃÇ³É³¤µÄÈËºÍÊÂ¡£ÔÚÕâÀï£¬ÎÒÃÇÑ§»áÁËÓÂ¸ÒÃæ¶ÔÀ§ÄÑ£¬°ÑÎÕÃ¿Ò»¸ö»ú»áÈ¥×·ÇóÃÎÏë¡£\n\n´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£\n\nÕâ¸ö³äÂúÉú»úÓë»îÁ¦µÄĞ£Ô°£¬ÎªÎÒÃÇÌá¹©ÁËÒ»¸öÕ¹³á°¿ÏèµÄÎèÌ¨¡£½ÌÊÒ´°ÍâµÄ·ç¾°£¬¾ÍÏñÒ»°ÑÄ§·¨°ô£¬ÎªÎÒÃÇ´øÀ´ÁËÓÂÆø¡¢ÖÇ»ÛºÍÁ¦Á¿¡£ÎÒÃÇÒªÕäÏ§ÔÚÕâÀï¶È¹ıµÄÃ¿Ò»Ìì£¬ÓÀÔ¶Ãú¼ÇÕâĞ©ÃÀºÃµÄË²¼ä¡£\n\nÔÚÎ´À´µÄËêÔÂÀï£¬ÎÒÃÇ½«¼ÌĞøÅ¬Á¦£¬ÎªÊµÏÖÃÎÏë¶ø·Ü¶·£¬Îª×æ¹úµÄ·±ÈÙºÍÊÀ½çµÄºÍÆ½¹±Ï×ÎÒÃÇµÄÁ¦Á¿¡£¶øÄÇĞ©½ÌÊÒ´°ÍâµÄÃÀÀö·ç¾°£¬½«ÓÀÔ¶Ãú¿ÌÔÚÎÒÃÇĞÄÖĞ£¬Åã°éÎÒÃÇ×ß¹ıÈËÉúµÄÃ¿Ò»¸ö½×¶Î£¬¼¤ÀøÎÒÃÇ²»¶ÏÇ°½ø¡£\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Õâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°£¬½«ÓÀÔ¶ÁôÔÚÎÒÃÇĞÄÖĞ¡£¶ø½ÌÊÒ´°ÍâµÄ·ç¾°£¬Ò²½«³ÉÎªÎÒÃÇÓÀÔ¶Õä²ØµÄÃÀºÃ»ØÒä¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:14:57,100 - INFO - Found 13 documents in data/file
+2023-07-04 22:14:57,183 - INFO - Loading faiss with AVX2 support.
+2023-07-04 22:14:57,184 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-04 22:14:57,185 - INFO - Loading faiss.
+2023-07-04 22:14:57,266 - INFO - Successfully loaded faiss.
+2023-07-04 22:14:59,890 - ERROR - Error loading db: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\faiss\faiss\impl\io.cpp:68: Error: 'f' failed: could not open dbf\gfile\gfile.faiss for reading: No such file or directory
+2023-07-04 22:14:59,891 - INFO - Saved db to data/filegfile
+2023-07-04 22:14:59,974 - INFO - None
+2023-07-04 22:16:43,814 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:16:43,816 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:16:43,817 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:16:45,821 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:16:45,822 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:16:45,823 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:16:45,827 - INFO - 0-Loading...ÓĞ¼¸ÖÖËæ»úÊı¶Ô±ÈµÄ·½°¸
+2023-07-04 22:16:45,828 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:16:45,829 - INFO - self.temperature£º0.5
+2023-07-04 22:16:45,830 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:16:45,830 - INFO - self.file_chunk_size£º200
+2023-07-04 22:16:45,831 - INFO - self.api_key£º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
+2023-07-04 22:16:45,832 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:16:45,833 - INFO - 1-Loading question answering chain...[1mOpenAI[0m
+Params: {'model_name': 'text-davinci-003', 'temperature': 0.5, 'max_tokens': -1, 'top_p': 1, 'frequency_penalty': 0, 'presence_penalty': 0, 'n': 1, 'request_timeout': None, 'logit_bias': {}}
+2023-07-04 22:16:45,835 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:16:47,691 - INFO - 2-Searching for similar documents...[Document(page_content='ÔÙ¿´ÄÇ¶À¾ßÌØÉ«µÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ËüÏñÒ»Î»¸ºÔğÈÎµÄÀÏÊ¦£¬ÓÃÃûÑÔ¾¯¾ä¼¤ÀøÎÒÃÇÇÚ·ÜÏòÉÏ¡£¶ø½ô°¤×Å³¤ÀÈµÄÄÇÒ»Æ¬Îå²Ê°ßìµµÄĞ¡»¨Ì³£¬¸üÊÇÈÃÈËÑÛÇ°Ò»ÁÁ¡£ÓĞÊ±ºò£¬ºûµûÔÚ»¨¶ä¼äôæôæÆğÎè£¬¸øÎÒÃÇ´øÀ´ÁËÎŞ¾¡µÄ»¶Óä¡£\n\n½ÌÊÒ´°Íâ»¹ÓĞÄÇÒıÈËÈëÊ¤µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±¡£ÕâÀï£¬ÎÒÃÇºÍÍ¬Ñ§ÃÇÒ»ÆğÍæË££¬Ò»±ßÑ§Ï°£¬Ò»±ßæÒÏ·¡£ÄÇÊ±£¬»¶Ğ¦Éù¡¢ÕÆÉù¡¢ÔŞÃÀÉù´ËÆğ±Ë·ü£¬³äÂúÁË»îÁ¦¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='ÔÙÍùÇ°¿´£¬´°ÍâÊÇÄÇÌõÇå³º¼ûµ×µÄ¡°Ô´Í·Ë®¡±£¬Ë®ÖĞµÄĞ¡Óã¶ù»¶¿ìµØÓÎ¶¯×Å£¬ÈÃÈËÌÕ×íÆäÖĞ¡£Ã¿µ±¿Î¼äĞİÏ¢£¬ÎÒÃÇ»áºÍÍ¬Ñ§ÃÇÒ»Æğ×ßµ½´°Íâ£¬ĞÀÉÍÕâĞ©ÃÀÀöµÄ¾°Îï£¬Ì¸ÂÛ×ÅÑ§Ï°ºÍÉú»îµÄÈ¤ÊÂ¡£\n\n´°Íâ»¹ÓĞÄÇ¶À¾ß½³ĞÄµÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ÕâÀï²¼ÂúÁËÃûÑÔ¾¯¾ä£¬Ê±¿ÌÌáĞÑ×ÅÎÒÃÇÒªÇÚ·ÜÑ§Ï°£¬³ÉÎªµÂÖÇÌåÃÀÈ«Ãæ·¢Õ¹µÄÈË¡£³¤ÀÈÅÔ±ß±ãÊÇÄÇÉ«²Ê°ßìµµÄĞ¡»¨Ì³£¬Îå²Ê°ßìµµÄ»¨¶ä¶ùÔÚÑô¹âÏÂÕùÑŞ¶·Àö£¬É¢·¢×Åµ­µ­µÄ·Ò·¼£¬ÈÃÈËĞÄ¿õÉñâù¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:16:47,693 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
+2023-07-04 22:16:48,941 - INFO - 4-Answering question...I don't know.
+2023-07-04 22:16:48,944 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-04 22:19:32,350 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:19:32,352 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:19:32,353 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:19:36,424 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:19:36,426 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:19:36,427 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:19:36,430 - INFO - Start Batch import
+2023-07-04 22:19:36,431 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:19:36,432 - INFO - self.temperature£º0.5
+2023-07-04 22:19:36,432 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:19:36,433 - INFO - self.file_chunk_size£º200
+2023-07-04 22:19:36,433 - INFO - self.api_key£º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
+2023-07-04 22:19:36,463 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:19:36,464 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:19:36,465 - INFO - filename£ºliudongxingpipei.docx
+2023-07-04 22:19:37,553 - INFO - filename£º×÷ÎÄ.docx
+2023-07-04 22:19:37,640 - INFO - filename£ºËæ»úÊıĞÔÄÜ¶Ô±È.html
+2023-07-04 22:19:37,709 - INFO - [Document(page_content='¡¶½ÌÊÒ´°Íâ¡·\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Ò»¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄÃÀÀöĞ£Ô°¡£Ã¿ÌìÀ´µ½ÕâÀï£¬ÎÒÃÇ¶¼³äÂúÁË¶ÔÖªÊ¶µÄºÃÆæºÍ¶ÔÉú»îµÄÈÈ°®¡£ÔÚÕâÀï£¬ÎÒÒªÏò´ó¼Ò½éÉÜÒ»¸öÈÃÎÒÁ÷Á¬Íü·µµÄµØ·½£¬ÄÇ¾ÍÊÇÎÒÃÇ½ÌÊÒ´°ÍâµÄ·ç¾°¡£\n\n×øÔÚ½ÌÊÒÀï£¬ÎÒ»á²»×Ô¾õµØ±»´°ÍâµÄÃÀ¾°ÎüÒı¡£´°Íâ£¬ÄÇÂÌÒâ°»È»µÄÊ÷Ä¾£¬·Â·ğÒ»¸ö¡°ÂÌÉ«É­ÁÖµ¹Ó°¡±£¬ÎªĞ£Ô°ÔöÌíÁËÒ»µÀÁÁÀöµÄ·ç¾°Ïß¡£ÔÚÄÇÆ¬ÂÌÒâÖĞ£¬ÓĞ¼¸Ö»èòèòÈçÉúµÄ¡°ÁÖÖĞÓã¡±µñËÜ£¬ËüÃÇÔÚÑô¹âµÄÕÕÉäÏÂÉÁ×Å¹âÁÁ£¬Éú¶¯¶ø¿É°®¡£ÎÒ»áÊ±²»Ê±µØÏëÏó£¬ËüÃÇÊÇ²»ÊÇÒ²ÔÚÏòÎÒÃÇÕâĞ©ÇóÖªµÄĞ¡Ñ§Éú´«µİ×ÅËüÃÇµÄÖÇ»ÛÄØ£¿\n\nÔÙÍùÇ°¿´£¬´°ÍâÊÇÄÇÌõÇå³º¼ûµ×µÄ¡°Ô´Í·Ë®¡±£¬Ë®ÖĞµÄĞ¡Óã¶ù»¶¿ìµØÓÎ¶¯×Å£¬ÈÃÈËÌÕ×íÆäÖĞ¡£Ã¿µ±¿Î¼äĞİÏ¢£¬ÎÒÃÇ»áºÍÍ¬Ñ§ÃÇÒ»Æğ×ßµ½´°Íâ£¬ĞÀÉÍÕâĞ©ÃÀÀöµÄ¾°Îï£¬Ì¸ÂÛ×ÅÑ§Ï°ºÍÉú»îµÄÈ¤ÊÂ¡£\n\n´°Íâ»¹ÓĞÄÇ¶À¾ß½³ĞÄµÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ÕâÀï²¼ÂúÁËÃûÑÔ¾¯¾ä£¬Ê±¿ÌÌáĞÑ×ÅÎÒÃÇÒªÇÚ·ÜÑ§Ï°£¬³ÉÎªµÂÖÇÌåÃÀÈ«Ãæ·¢Õ¹µÄÈË¡£³¤ÀÈÅÔ±ß±ãÊÇÄÇÉ«²Ê°ßìµµÄĞ¡»¨Ì³£¬Îå²Ê°ßìµµÄ»¨¶ä¶ùÔÚÑô¹âÏÂÕùÑŞ¶·Àö£¬É¢·¢×Åµ­µ­µÄ·Ò·¼£¬ÈÃÈËĞÄ¿õÉñâù¡£\n\n³ı´ËÖ®Íâ£¬»¹ÓĞÄÇÒıÈË×¢Ä¿µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±£¬ËüÃÇÔÚÌáĞÑ×ÅÎÒÃÇ£¬Ñ§Ï°ÊÇÒ»±²×ÓµÄÊÂ£¬Ö»ÓĞ²»¶ÏµØÑ§Ï°£¬²ÅÄÜÈÃ×Ô¼º±äµÃ¸ü¼ÓÓÅĞã¡£\n\n½ÌÊÒ´°ÍâµÄ·ç¾°ÃÀÀö¶ø¸»ÓĞÒâÒå£¬ÕâĞ©¾°Îï¼ûÖ¤ÁËÎÒÃÇÒ»ÌìÌìµÄ³É³¤£¬Ò²¼ûÖ¤ÁËÎÒÃÇÔÚÕâÀï¶È¹ıµÄ¿ìÀÖÊ±¹â¡£ËüÃÇ¼¤Àø×ÅÎÒÃÇÅ¬Á¦Ñ§Ï°£¬×·Çó×¿Ô½£¬³ÉÎªÒ»¸ö¡°ÌÃÌÃÕıÕıµÄÖĞ¹úÈË£¬ĞØ»³×æ¹úµÄÊÀ½çÈË¡±¡£\n\nÔÚÕâÀï£¬ÎÒÃÇÑ§»áÁËÕäÏ§Ê±¼ä£¬Ñ§»áÁË¸Ğ¶÷Ê¦³¤ºÍÍ¬°éÃÇµÄÅã°é¡£Ã¿Ò»´¦´°ÍâµÄ·ç¾°¶¼ÈÚÈëÁËÎÒÃÇ³É³¤µÄµãµÎ»ØÒä£¬ËüÃÇ²»½öÃÀ»¯ÁËÎÒÃÇµÄÊÓÒ°£¬Ò²ÃÀ»¯ÁËÎÒÃÇµÄĞÄÁé¡£\n\nÕ¾ÔÚ½ÌÊÒ´°¿Ú£¬ÎÒÏë¶Ô´°ÍâµÄ·ç¾°ËµÉùĞ»Ğ»£¬Ğ»Ğ»ËüÃÇ¸øÎÒÃÇ´øÀ´µÄÃÀºÃºÍ¿ìÀÖ¡£ÔÚÎ´À´µÄÈÕ×ÓÀï£¬ÎÒÃÇÒª¼ÌĞøÅ¬Á¦£¬ÎªÊµÏÖ×Ô¼ºµÄÃÎÏë¶øÆ´²«£¬Îª×æ¹úµÄ·±ÈÙºÍÊÀ½çµÄºÍÆ½¹±Ï××Ô¼ºµÄÁ¦Á¿¡£\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Õâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°£¬½«ÓÀÔ¶ÁôÔÚÎÒÃÇĞÄÖĞ¡£¶ø½ÌÊÒ´°ÍâµÄ·ç¾°£¬Ò²½«³ÉÎªÎÒÃÇÓÀÔ¶Õä²ØµÄÃÀºÃ»ØÒä£¬Åã°éÎÒÃÇ×ß¹ıÈËÉúµÄÃ¿Ò»¸ö½×¶Î¡£\n\n<PAGE BREAK>\n\n¡¶´°ÍâµÄÆæÃîÊÀ½ç¡·\n\nÔÚº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§µÄ½ÌÊÒÀï£¬Ã¿µ±ÎÒÌ§Í·ÍûÏò´°Íâ£¬×Ü»á·¢ÏÖÒ»¸ö³äÂú¾ªÏ²ºÍ»îÁ¦µÄÆæÃîÊÀ½ç¡£ÓÌÈçÒ»·ùÉ«²Ê°ßìµµÄ»­¾í£¬Õ¹ÏÖÔÚÎÒÑÛÇ°¡£\n\n´°Íâ£¬ÂÌÉ«É­ÁÖµ¹Ó°µÄÊ÷Ä¾ÔÚÑô¹âÏÂÒ¡Ò·Éú×Ë£¬·Â·ğÔÚÌø¶¯×Å»¶¿ìµÄÎèµ¸¡£ÓĞÊ±£¬¼¸Ö»Ğ¡ÄñÔÚÊ÷Ö¦¼ä»¶½Ğ£¬ÎªÕâ¾²Ú×µÄĞ£Ô°´øÀ´ÁËÉúÆø¡£¾ÍÔÚÊ÷Ä¾µÄÅÔ±ß£¬ÄÇ¼¸Ö»º©Ì¬¿ÉŞäµÄ¡°ÁÖÖĞÓã¡±µñËÜºÃÏñÔÚÏòÎÒÃÇÕ£ÑÛÊ¾Òâ£¬°µÊ¾×ÅËüÃÇÒ²ÔÚÓëÎÒÃÇÒ»ÆğÌ½Ë÷ÖªÊ¶µÄº£Ñó¡£\n\n½ÌÊÒ´°ÍâµÄ¡°Ô´Í·Ë®¡±×ÜÊÇÇå³º¼ûµ×£¬Ë®ÖĞµÄĞ¡Óã¶ùÓÎµÃ»¶¿ì¶ø×ÔÓÉ¡£Ã¿µ±¿Î¼ä£¬ÎÒºÍÍ¬Ñ§ÃÇ»áÀ´µ½´°Íâ£¬Ò»±ß¹ÛÉÍÕâĞ©¿ìÀÖµÄĞ¡ÉúÃü£¬Ò»±ßÕùÂÛ×ÅË­¼ÒµÄ½ğÓã×îÃÀ¡£ÎÒÃÇµÄ»¶ÉùĞ¦Óï£¬»ã³ÉÁËÃÀÃîµÄĞıÂÉ£¬Ïì³¹ÔÚÕâÆ¬ÃÀÀöµÄĞ£Ô°Àï¡£\n\nÔÙ¿´ÄÇ¶À¾ßÌØÉ«µÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ËüÏñÒ»Î»¸ºÔğÈÎµÄÀÏÊ¦£¬ÓÃÃûÑÔ¾¯¾ä¼¤ÀøÎÒÃÇÇÚ·ÜÏòÉÏ¡£¶ø½ô°¤×Å³¤ÀÈµÄÄÇÒ»Æ¬Îå²Ê°ßìµµÄĞ¡»¨Ì³£¬¸üÊÇÈÃÈËÑÛÇ°Ò»ÁÁ¡£ÓĞÊ±ºò£¬ºûµûÔÚ»¨¶ä¼äôæôæÆğÎè£¬¸øÎÒÃÇ´øÀ´ÁËÎŞ¾¡µÄ»¶Óä¡£\n\n½ÌÊÒ´°Íâ»¹ÓĞÄÇÒıÈËÈëÊ¤µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±¡£ÕâÀï£¬ÎÒÃÇºÍÍ¬Ñ§ÃÇÒ»ÆğÍæË££¬Ò»±ßÑ§Ï°£¬Ò»±ßæÒÏ·¡£ÄÇÊ±£¬»¶Ğ¦Éù¡¢ÕÆÉù¡¢ÔŞÃÀÉù´ËÆğ±Ë·ü£¬³äÂúÁË»îÁ¦¡£\n\n´°ÍâµÄ·ç¾°×ÜÊÇÄÇÃ´·á¸»¶à²Ê£¬ÈÃÎÒÃÇÔÚ¿ìÀÖÖĞ³É³¤¡£ËüÃÇ¼ûÖ¤ÁËÎÒÃÇ´ÓÖÉÄÛ×ßÏò³ÉÊìµÄ¹ı³Ì£¬Ò²¼ûÖ¤ÁËÎÒÃÇÓëÊ¦³¤¡¢Í¬°éÖ®¼äÉîºñµÄÓÑÒê¡£ÔÚÕâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°Àï£¬ÎÒÃÇÑ§»áÁËÕäÏ§Ã¿Ò»¸öÃÀºÃË²¼ä£¬¸Ğ¶÷ÕâÒ»ÇĞÅã°éÎÒÃÇ³É³¤µÄÈËºÍÊÂ¡£ÔÚÕâÀï£¬ÎÒÃÇÑ§»áÁËÓÂ¸ÒÃæ¶ÔÀ§ÄÑ£¬°ÑÎÕÃ¿Ò»¸ö»ú»áÈ¥×·ÇóÃÎÏë¡£\n\n´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£\n\nÕâ¸ö³äÂúÉú»úÓë»îÁ¦µÄĞ£Ô°£¬ÎªÎÒÃÇÌá¹©ÁËÒ»¸öÕ¹³á°¿ÏèµÄÎèÌ¨¡£½ÌÊÒ´°ÍâµÄ·ç¾°£¬¾ÍÏñÒ»°ÑÄ§·¨°ô£¬ÎªÎÒÃÇ´øÀ´ÁËÓÂÆø¡¢ÖÇ»ÛºÍÁ¦Á¿¡£ÎÒÃÇÒªÕäÏ§ÔÚÕâÀï¶È¹ıµÄÃ¿Ò»Ìì£¬ÓÀÔ¶Ãú¼ÇÕâĞ©ÃÀºÃµÄË²¼ä¡£\n\nÔÚÎ´À´µÄËêÔÂÀï£¬ÎÒÃÇ½«¼ÌĞøÅ¬Á¦£¬ÎªÊµÏÖÃÎÏë¶ø·Ü¶·£¬Îª×æ¹úµÄ·±ÈÙºÍÊÀ½çµÄºÍÆ½¹±Ï×ÎÒÃÇµÄÁ¦Á¿¡£¶øÄÇĞ©½ÌÊÒ´°ÍâµÄÃÀÀö·ç¾°£¬½«ÓÀÔ¶Ãú¿ÌÔÚÎÒÃÇĞÄÖĞ£¬Åã°éÎÒÃÇ×ß¹ıÈËÉúµÄÃ¿Ò»¸ö½×¶Î£¬¼¤ÀøÎÒÃÇ²»¶ÏÇ°½ø¡£\n\nº¼ÖİÊĞÊ¡¸®Â·Ğ¡Ñ§£¬Õâ¸ö³äÂúÍ¯ĞÄ¡¢Í¯ÄêºÍÍ¯»°µÄĞ£Ô°£¬½«ÓÀÔ¶ÁôÔÚÎÒÃÇĞÄÖĞ¡£¶ø½ÌÊÒ´°ÍâµÄ·ç¾°£¬Ò²½«³ÉÎªÎÒÃÇÓÀÔ¶Õä²ØµÄÃÀºÃ»ØÒä¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:19:37,711 - INFO - Found 13 documents in data/file
+2023-07-04 22:19:37,806 - INFO - Loading faiss with AVX2 support.
+2023-07-04 22:19:37,806 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-04 22:19:37,807 - INFO - Loading faiss.
+2023-07-04 22:19:37,887 - INFO - Successfully loaded faiss.
+2023-07-04 22:19:40,734 - ERROR - Error loading db: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\faiss\faiss\impl\io.cpp:68: Error: 'f' failed: could not open dbf\gfile\gfile.faiss for reading: No such file or directory
+2023-07-04 22:19:40,735 - INFO - Saved db to data/filegfile
+2023-07-04 22:19:40,858 - INFO - None
+2023-07-04 22:19:40,941 - INFO - None
+2023-07-04 22:19:41,146 - INFO - utf-8
+2023-07-04 22:21:42,424 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:21:42,427 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:21:42,428 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:16,764 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:22:16,766 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:22:16,767 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:18,233 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:22:18,235 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:22:18,236 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:18,239 - INFO - 0-Loading...Ëæ»úÊıĞÔÄÜ¶Ô±ÈÓĞÄÄ¼¸ÖÖ·½°¸
+2023-07-04 22:22:18,240 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:18,241 - INFO - self.temperature£º0.5
+2023-07-04 22:22:18,242 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:22:18,242 - INFO - self.file_chunk_size£º200
+2023-07-04 22:22:18,243 - INFO - self.api_key£º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
+2023-07-04 22:22:18,268 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:22:18,270 - INFO - 1-Loading question answering chain...[1mOpenAI[0m
+Params: {'model_name': 'text-davinci-003', 'temperature': 0.5, 'max_tokens': -1, 'top_p': 1, 'frequency_penalty': 0, 'presence_penalty': 0, 'n': 1, 'request_timeout': None, 'logit_bias': {}}
+2023-07-04 22:22:18,272 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:22:18,355 - INFO - Loading faiss with AVX2 support.
+2023-07-04 22:22:18,356 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-04 22:22:18,356 - INFO - Loading faiss.
+2023-07-04 22:22:18,431 - INFO - Successfully loaded faiss.
+2023-07-04 22:22:19,923 - INFO - 2-Searching for similar documents...[Document(page_content='´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='ÔÙ¿´ÄÇ¶À¾ßÌØÉ«µÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ËüÏñÒ»Î»¸ºÔğÈÎµÄÀÏÊ¦£¬ÓÃÃûÑÔ¾¯¾ä¼¤ÀøÎÒÃÇÇÚ·ÜÏòÉÏ¡£¶ø½ô°¤×Å³¤ÀÈµÄÄÇÒ»Æ¬Îå²Ê°ßìµµÄĞ¡»¨Ì³£¬¸üÊÇÈÃÈËÑÛÇ°Ò»ÁÁ¡£ÓĞÊ±ºò£¬ºûµûÔÚ»¨¶ä¼äôæôæÆğÎè£¬¸øÎÒÃÇ´øÀ´ÁËÎŞ¾¡µÄ»¶Óä¡£\n\n½ÌÊÒ´°Íâ»¹ÓĞÄÇÒıÈËÈëÊ¤µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±¡£ÕâÀï£¬ÎÒÃÇºÍÍ¬Ñ§ÃÇÒ»ÆğÍæË££¬Ò»±ßÑ§Ï°£¬Ò»±ßæÒÏ·¡£ÄÇÊ±£¬»¶Ğ¦Éù¡¢ÕÆÉù¡¢ÔŞÃÀÉù´ËÆğ±Ë·ü£¬³äÂúÁË»îÁ¦¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='³ı´ËÖ®Íâ£¬»¹ÓĞÄÇÒıÈË×¢Ä¿µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±£¬ËüÃÇÔÚÌáĞÑ×ÅÎÒÃÇ£¬Ñ§Ï°ÊÇÒ»±²×ÓµÄÊÂ£¬Ö»ÓĞ²»¶ÏµØÑ§Ï°£¬²ÅÄÜÈÃ×Ô¼º±äµÃ¸ü¼ÓÓÅĞã¡£\n\n½ÌÊÒ´°ÍâµÄ·ç¾°ÃÀÀö¶ø¸»ÓĞÒâÒå£¬ÕâĞ©¾°Îï¼ûÖ¤ÁËÎÒÃÇÒ»ÌìÌìµÄ³É³¤£¬Ò²¼ûÖ¤ÁËÎÒÃÇÔÚÕâÀï¶È¹ıµÄ¿ìÀÖÊ±¹â¡£ËüÃÇ¼¤Àø×ÅÎÒÃÇÅ¬Á¦Ñ§Ï°£¬×·Çó×¿Ô½£¬³ÉÎªÒ»¸ö¡°ÌÃÌÃÕıÕıµÄÖĞ¹úÈË£¬ĞØ»³×æ¹úµÄÊÀ½çÈË¡±¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:22:19,925 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
+2023-07-04 22:22:21,510 - INFO - 4-Answering question...
+I don't know.
+2023-07-04 22:22:21,513 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-04 22:22:35,825 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:22:35,827 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:22:35,828 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:37,653 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:22:37,655 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:22:37,656 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:37,660 - INFO - 0-Loading...½éÉÜÏÂÈıÖÖÊ¹ÓÃËæ»úÊı·½Ê½
+2023-07-04 22:22:37,661 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:37,662 - INFO - self.temperature£º0.5
+2023-07-04 22:22:37,663 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:22:37,663 - INFO - self.file_chunk_size£º200
+2023-07-04 22:22:37,664 - INFO - self.api_key£º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
+2023-07-04 22:22:37,665 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:22:37,666 - INFO - 1-Loading question answering chain...[1mOpenAI[0m
+Params: {'model_name': 'text-davinci-003', 'temperature': 0.5, 'max_tokens': -1, 'top_p': 1, 'frequency_penalty': 0, 'presence_penalty': 0, 'n': 1, 'request_timeout': None, 'logit_bias': {}}
+2023-07-04 22:22:37,667 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:22:39,330 - INFO - 2-Searching for similar documents...[Document(page_content='ÔÙ¿´ÄÇ¶À¾ßÌØÉ«µÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ËüÏñÒ»Î»¸ºÔğÈÎµÄÀÏÊ¦£¬ÓÃÃûÑÔ¾¯¾ä¼¤ÀøÎÒÃÇÇÚ·ÜÏòÉÏ¡£¶ø½ô°¤×Å³¤ÀÈµÄÄÇÒ»Æ¬Îå²Ê°ßìµµÄĞ¡»¨Ì³£¬¸üÊÇÈÃÈËÑÛÇ°Ò»ÁÁ¡£ÓĞÊ±ºò£¬ºûµûÔÚ»¨¶ä¼äôæôæÆğÎè£¬¸øÎÒÃÇ´øÀ´ÁËÎŞ¾¡µÄ»¶Óä¡£\n\n½ÌÊÒ´°Íâ»¹ÓĞÄÇÒıÈËÈëÊ¤µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±¡£ÕâÀï£¬ÎÒÃÇºÍÍ¬Ñ§ÃÇÒ»ÆğÍæË££¬Ò»±ßÑ§Ï°£¬Ò»±ßæÒÏ·¡£ÄÇÊ±£¬»¶Ğ¦Éù¡¢ÕÆÉù¡¢ÔŞÃÀÉù´ËÆğ±Ë·ü£¬³äÂúÁË»îÁ¦¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='´°Íâ£¬ÂÌÉ«É­ÁÖµ¹Ó°µÄÊ÷Ä¾ÔÚÑô¹âÏÂÒ¡Ò·Éú×Ë£¬·Â·ğÔÚÌø¶¯×Å»¶¿ìµÄÎèµ¸¡£ÓĞÊ±£¬¼¸Ö»Ğ¡ÄñÔÚÊ÷Ö¦¼ä»¶½Ğ£¬ÎªÕâ¾²Ú×µÄĞ£Ô°´øÀ´ÁËÉúÆø¡£¾ÍÔÚÊ÷Ä¾µÄÅÔ±ß£¬ÄÇ¼¸Ö»º©Ì¬¿ÉŞäµÄ¡°ÁÖÖĞÓã¡±µñËÜºÃÏñÔÚÏòÎÒÃÇÕ£ÑÛÊ¾Òâ£¬°µÊ¾×ÅËüÃÇÒ²ÔÚÓëÎÒÃÇÒ»ÆğÌ½Ë÷ÖªÊ¶µÄº£Ñó¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:22:39,332 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
+2023-07-04 22:22:40,332 - INFO - 4-Answering question...I don't know.
+2023-07-04 22:22:40,334 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-04 22:22:51,033 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:22:51,034 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:22:51,035 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:52,587 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:22:52,589 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:22:52,590 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:52,593 - INFO - 0-Loading...½éÉÜÏÂJMH ²âÊÔ´úÂë
+2023-07-04 22:22:52,594 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:22:52,595 - INFO - self.temperature£º0.5
+2023-07-04 22:22:52,596 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:22:52,597 - INFO - self.file_chunk_size£º200
+2023-07-04 22:22:52,597 - INFO - self.api_key£º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
+2023-07-04 22:22:52,598 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:22:52,599 - INFO - 1-Loading question answering chain...[1mOpenAI[0m
+Params: {'model_name': 'text-davinci-003', 'temperature': 0.5, 'max_tokens': -1, 'top_p': 1, 'frequency_penalty': 0, 'presence_penalty': 0, 'n': 1, 'request_timeout': None, 'logit_bias': {}}
+2023-07-04 22:22:52,600 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:22:54,388 - INFO - 2-Searching for similar documents...[Document(page_content='´°Íâ£¬ÂÌÉ«É­ÁÖµ¹Ó°µÄÊ÷Ä¾ÔÚÑô¹âÏÂÒ¡Ò·Éú×Ë£¬·Â·ğÔÚÌø¶¯×Å»¶¿ìµÄÎèµ¸¡£ÓĞÊ±£¬¼¸Ö»Ğ¡ÄñÔÚÊ÷Ö¦¼ä»¶½Ğ£¬ÎªÕâ¾²Ú×µÄĞ£Ô°´øÀ´ÁËÉúÆø¡£¾ÍÔÚÊ÷Ä¾µÄÅÔ±ß£¬ÄÇ¼¸Ö»º©Ì¬¿ÉŞäµÄ¡°ÁÖÖĞÓã¡±µñËÜºÃÏñÔÚÏòÎÒÃÇÕ£ÑÛÊ¾Òâ£¬°µÊ¾×ÅËüÃÇÒ²ÔÚÓëÎÒÃÇÒ»ÆğÌ½Ë÷ÖªÊ¶µÄº£Ñó¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='ÔÙÍùÇ°¿´£¬´°ÍâÊÇÄÇÌõÇå³º¼ûµ×µÄ¡°Ô´Í·Ë®¡±£¬Ë®ÖĞµÄĞ¡Óã¶ù»¶¿ìµØÓÎ¶¯×Å£¬ÈÃÈËÌÕ×íÆäÖĞ¡£Ã¿µ±¿Î¼äĞİÏ¢£¬ÎÒÃÇ»áºÍÍ¬Ñ§ÃÇÒ»Æğ×ßµ½´°Íâ£¬ĞÀÉÍÕâĞ©ÃÀÀöµÄ¾°Îï£¬Ì¸ÂÛ×ÅÑ§Ï°ºÍÉú»îµÄÈ¤ÊÂ¡£\n\n´°Íâ»¹ÓĞÄÇ¶À¾ß½³ĞÄµÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ÕâÀï²¼ÂúÁËÃûÑÔ¾¯¾ä£¬Ê±¿ÌÌáĞÑ×ÅÎÒÃÇÒªÇÚ·ÜÑ§Ï°£¬³ÉÎªµÂÖÇÌåÃÀÈ«Ãæ·¢Õ¹µÄÈË¡£³¤ÀÈÅÔ±ß±ãÊÇÄÇÉ«²Ê°ßìµµÄĞ¡»¨Ì³£¬Îå²Ê°ßìµµÄ»¨¶ä¶ùÔÚÑô¹âÏÂÕùÑŞ¶·Àö£¬É¢·¢×Åµ­µ­µÄ·Ò·¼£¬ÈÃÈËĞÄ¿õÉñâù¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:22:54,390 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
+2023-07-04 22:22:55,216 - INFO - 4-Answering question...I don't know.
+2023-07-04 22:22:55,218 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-04 22:23:16,092 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:23:16,093 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:23:16,095 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:23:17,794 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:23:17,796 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:23:17,797 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:23:17,801 - INFO - 0-Loading...½éÉÜÏÂ¼ÓÈ¨×Ê½ğÔËÓÃ
+2023-07-04 22:23:17,802 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:23:17,803 - INFO - self.temperature£º0.5
+2023-07-04 22:23:17,804 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:23:17,804 - INFO - self.file_chunk_size£º200
+2023-07-04 22:23:17,805 - INFO - self.api_key£º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
+2023-07-04 22:23:17,806 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:23:17,807 - INFO - 1-Loading question answering chain...[1mOpenAI[0m
+Params: {'model_name': 'text-davinci-003', 'temperature': 0.5, 'max_tokens': -1, 'top_p': 1, 'frequency_penalty': 0, 'presence_penalty': 0, 'n': 1, 'request_timeout': None, 'logit_bias': {}}
+2023-07-04 22:23:17,809 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:23:19,365 - INFO - 2-Searching for similar documents...[Document(page_content='´°ÍâµÄ·ç¾°·Â·ğÒ²ÔÚÇÄÇÄµØ±ä»¯¡£Ëæ×Å¼¾½ÚµÄ¸üÌæ£¬´ºÅ¯»¨¿ªÊ±£¬ÎÒÃÇÔÚ¡°ÓÎÀÖÔ°¡±¾¡ÇéÍæË££¬Óë»ï°éÃÇ³©Ì¸ÃÀºÃµÄÎ´À´£»ÏÄÈÕÑ×Ñ×£¬ÎÒÃÇÔÚ¡°µØÍ¼ÅÊÑÒ±Ú¡±»Óº¹ÈçÓê£¬¶ÍÁ¶ÉíÌå£¬Ä¥Á·ÒâÖ¾£»Çï·çÏôÉªÖ®¼Ê£¬ÎÒÃÇÔÚ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±ÀïÑ°ÕÒÖÇ»ÛµÄ»ğ»¨£¬¼³È¡ÖªÊ¶µÄÓªÑø£»º®¶¬À°ÔÂ£¬ÎÒÃÇÔÚÊÒÄÚ½øĞĞ¸÷ÖÖÓĞÈ¤µÄ»î¶¯£¬Ôö½øÓÑÒê£¬ÏíÊÜ¿ìÀÖÊ±¹â¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='³ı´ËÖ®Íâ£¬»¹ÓĞÄÇÒıÈË×¢Ä¿µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±£¬ËüÃÇÔÚÌáĞÑ×ÅÎÒÃÇ£¬Ñ§Ï°ÊÇÒ»±²×ÓµÄÊÂ£¬Ö»ÓĞ²»¶ÏµØÑ§Ï°£¬²ÅÄÜÈÃ×Ô¼º±äµÃ¸ü¼ÓÓÅĞã¡£\n\n½ÌÊÒ´°ÍâµÄ·ç¾°ÃÀÀö¶ø¸»ÓĞÒâÒå£¬ÕâĞ©¾°Îï¼ûÖ¤ÁËÎÒÃÇÒ»ÌìÌìµÄ³É³¤£¬Ò²¼ûÖ¤ÁËÎÒÃÇÔÚÕâÀï¶È¹ıµÄ¿ìÀÖÊ±¹â¡£ËüÃÇ¼¤Àø×ÅÎÒÃÇÅ¬Á¦Ñ§Ï°£¬×·Çó×¿Ô½£¬³ÉÎªÒ»¸ö¡°ÌÃÌÃÕıÕıµÄÖĞ¹úÈË£¬ĞØ»³×æ¹úµÄÊÀ½çÈË¡±¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'}), Document(page_content='ÔÙ¿´ÄÇ¶À¾ßÌØÉ«µÄ¡°ÂÌÉ«ÎÄ»¯³¤ÀÈ¡±£¬ËüÏñÒ»Î»¸ºÔğÈÎµÄÀÏÊ¦£¬ÓÃÃûÑÔ¾¯¾ä¼¤ÀøÎÒÃÇÇÚ·ÜÏòÉÏ¡£¶ø½ô°¤×Å³¤ÀÈµÄÄÇÒ»Æ¬Îå²Ê°ßìµµÄĞ¡»¨Ì³£¬¸üÊÇÈÃÈËÑÛÇ°Ò»ÁÁ¡£ÓĞÊ±ºò£¬ºûµûÔÚ»¨¶ä¼äôæôæÆğÎè£¬¸øÎÒÃÇ´øÀ´ÁËÎŞ¾¡µÄ»¶Óä¡£\n\n½ÌÊÒ´°Íâ»¹ÓĞÄÇÒıÈËÈëÊ¤µÄ¡°°®ÒòË¹Ì¹¹«Ê½Â·¡±ºÍ¡°Ó¢Óï×ÖÄ¸µÊ¡±¡£ÕâÀï£¬ÎÒÃÇºÍÍ¬Ñ§ÃÇÒ»ÆğÍæË££¬Ò»±ßÑ§Ï°£¬Ò»±ßæÒÏ·¡£ÄÇÊ±£¬»¶Ğ¦Éù¡¢ÕÆÉù¡¢ÔŞÃÀÉù´ËÆğ±Ë·ü£¬³äÂúÁË»îÁ¦¡£', metadata={'source': 'data/file/×÷ÎÄ.docx'})]
+2023-07-04 22:23:19,367 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
+2023-07-04 22:23:20,152 - INFO - 4-Answering question...I don't know.
+2023-07-04 22:23:20,154 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-04 22:29:19,716 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:29:19,719 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:29:19,720 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:29:22,518 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:29:22,520 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:29:22,520 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:29:22,524 - INFO - Start Batch import
+2023-07-04 22:29:22,525 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:29:22,526 - INFO - self.temperature£º0.5
+2023-07-04 22:29:22,527 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:29:22,527 - INFO - self.file_chunk_size£º200
+2023-07-04 22:29:22,528 - INFO - self.api_key£º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
+2023-07-04 22:29:22,556 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:29:22,558 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:29:22,558 - INFO - filename£ºliudongxingpipei.docx
+2023-07-04 22:29:23,637 - INFO - filename£º×÷ÎÄ.docx
+2023-07-04 22:29:23,725 - INFO - filename£ºËæ»úÊıĞÔÄÜ¶Ô±È.html
+2023-07-04 22:29:23,727 - INFO - Found 13 documents in data/file
+2023-07-04 22:29:23,810 - INFO - Loading faiss with AVX2 support.
+2023-07-04 22:29:23,811 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-04 22:29:23,811 - INFO - Loading faiss.
+2023-07-04 22:29:23,890 - INFO - Successfully loaded faiss.
+2023-07-04 22:34:59,809 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:34:59,811 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:34:59,812 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:35:04,506 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:35:04,509 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:35:04,510 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:35:04,514 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:35:04,515 - INFO - self.temperature£º0.5
+2023-07-04 22:35:04,515 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:35:04,516 - INFO - self.file_chunk_size£º200
+2023-07-04 22:35:04,516 - INFO - self.api_key£º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
+2023-07-04 22:35:04,517 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:35:04,519 - INFO - 1-Reading document...
+2023-07-04 22:35:04,520 - INFO - {'FileName': 'liudongxingpipei.docx', 'FileType': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}
+2023-07-04 22:35:04,521 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:35:04,631 - INFO - Found 4 documents in data/file\liudongxingpipei.docx
+2023-07-04 22:35:07,011 - ERROR - Error loading db: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\faiss\faiss\impl\io.cpp:68: Error: 'f' failed: could not open dbf\gfile\gfile.faiss for reading: No such file or directory
+2023-07-04 22:35:07,012 - INFO - Saved db to liudongxingpipei.docxgfile
+2023-07-04 22:35:07,139 - INFO - None
+2023-07-04 22:35:17,971 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:35:17,973 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:35:17,973 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:35:19,479 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-04 22:35:19,481 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-04 22:35:19,482 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:35:19,487 - INFO - 0-Loading...½éÉÜÏÂÁ÷¶¯ĞÔÆ¥ÅäÂÊ
+2023-07-04 22:35:19,488 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-04 22:35:19,489 - INFO - self.temperature£º0.5
+2023-07-04 22:35:19,490 - INFO - self.max_context_tokens£º-1
+2023-07-04 22:35:19,490 - INFO - self.file_chunk_size£º200
+2023-07-04 22:35:19,491 - INFO - self.api_key£º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
+2023-07-04 22:35:19,492 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-04 22:35:19,493 - INFO - 1-Loading question answering chain...[1mOpenAI[0m
+Params: {'model_name': 'text-davinci-003', 'temperature': 0.5, 'max_tokens': -1, 'top_p': 1, 'frequency_penalty': 0, 'presence_penalty': 0, 'n': 1, 'request_timeout': None, 'logit_bias': {}}
+2023-07-04 22:35:19,494 - INFO - folder_path£ºdbf/gfile
+2023-07-04 22:35:21,517 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
+2023-07-04 22:35:36,135 - INFO - 4-Answering question... Á÷¶¯ĞÔÆ¥ÅäÂÊÊÇºâÁ¿ÉÌÒµÒøĞĞÖ÷Òª×Ê²úÓë¸ºÕ®µÄÆÚÏŞÅäÖÃ½á¹¹µÄÖ¸±ê£¬Ö¼ÔÚÒıµ¼ÉÌÒµÒøĞĞºÏÀíÅäÖÃ³¤ÆÚÎÈ¶¨¸ºÕ®¡¢¸ßÁ÷¶¯ĞÔ»ò¶ÌÆÚ×Ê²ú£¬±ÜÃâ¹ı¶ÈÒÀÀµ¶ÌÆÚ×Ê½ğÖ§³Ö³¤ÆÚÒµÎñ·¢Õ¹£¬Ìá¸ßÁ÷¶¯ĞÔ·çÏÕµÖÓùÄÜÁ¦¡£Á÷¶¯ĞÔÆ¥ÅäÂÊµÄ¼ÆËã·½Ê½ÊÇ¼ÓÈ¨×Ê½ğÀ´Ô´³ıÒÔ¼ÓÈ¨×Ê½ğÔËÓÃµÄ°Ù·Ö±È¡£¼ÓÈ¨×Ê½ğÀ´Ô´°üÀ¨À´×ÔÖĞÑëÒøĞĞµÄ×Ê½ğ¡¢¸÷Ïî´æ¿î¡¢Í¬Òµ´æ¿î¡¢Í¬Òµ²ğÈë¼°Âô³ö»Ø¹º¡¢·¢ĞĞÕ®È¯¼°·¢ĞĞÍ¬Òµ´æµ¥µÈ£»¼ÓÈ¨×Ê½ğÔËÓÃ°üÀ¨¸÷Ïî´û¿î¡¢´æ·ÅÍ¬Òµ¼°Í¶×ÊÍ¬Òµ´æµ¥¡¢²ğ·ÅÍ¬Òµ¼°ÂòÈë·µÊÛ¡¢ÆäËûÍ¶×ÊºÍÓÉÒøĞĞÒµ¼à¶½¹ÜÀí»ú¹¹ÊÓÇéĞÎÈ·¶¨µÄÏîÄ¿µÈ¡£
+2023-07-04 22:35:36,138 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-05 07:12:35,512 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:12:35,549 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:12:35,550 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:12:40,121 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:12:40,123 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:12:40,124 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:12:40,126 - INFO - Start Batch import
+2023-07-05 07:12:40,127 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:12:40,128 - INFO - self.temperature£º0.5
+2023-07-05 07:12:40,129 - INFO - self.max_context_tokens£º-1
+2023-07-05 07:12:40,129 - INFO - self.file_chunk_size£º200
+2023-07-05 07:12:40,130 - INFO - self.api_key£º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
+2023-07-05 07:12:40,201 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-05 07:12:40,203 - INFO - folder_path£ºdbf/gfile
+2023-07-05 07:12:40,203 - INFO - filename£ºliudongxingpipei.docx
+2023-07-05 07:12:41,537 - INFO - filename£º×÷ÎÄ.docx
+2023-07-05 07:15:05,407 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:15:05,408 - INFO - self.temperature£º0
+2023-07-05 07:15:05,409 - INFO - self.max_context_tokens£º-1
+2023-07-05 07:15:05,409 - INFO - self.file_chunk_size£º200
+2023-07-05 07:15:05,410 - INFO - self.api_key£º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
+2023-07-05 07:15:05,441 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-05 07:15:05,477 - INFO - folder_path£ºdbf/clw
+2023-07-05 07:15:05,478 - INFO - filename£ºliudongxingpipei.docx
+2023-07-05 07:15:06,507 - INFO - filename£º×÷ÎÄ.docx
+2023-07-05 07:15:06,714 - INFO - Loading faiss with AVX2 support.
+2023-07-05 07:15:06,715 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-05 07:15:06,716 - INFO - Loading faiss.
+2023-07-05 07:15:06,895 - INFO - Successfully loaded faiss.
+2023-07-05 07:16:11,761 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:16:11,762 - INFO - self.temperature£º0
+2023-07-05 07:16:11,763 - INFO - self.max_context_tokens£º-1
+2023-07-05 07:16:11,763 - INFO - self.file_chunk_size£º200
+2023-07-05 07:16:11,764 - INFO - self.api_key£º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
+2023-07-05 07:16:11,793 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-05 07:16:11,794 - INFO - folder_path£ºdbf/clw
+2023-07-05 07:16:11,795 - INFO - filename£ºliudongxingpipei.docx
+2023-07-05 07:16:12,805 - INFO - filename£º×÷ÎÄ.docx
+2023-07-05 07:16:12,971 - INFO - Loading faiss with AVX2 support.
+2023-07-05 07:16:12,972 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-05 07:16:12,973 - INFO - Loading faiss.
+2023-07-05 07:16:13,080 - INFO - Successfully loaded faiss.
+2023-07-05 07:16:16,326 - ERROR - Error loading db: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\faiss\faiss\impl\io.cpp:68: Error: 'f' failed: could not open dbf\clw\clw.faiss for reading: No such file or directory
+2023-07-05 07:16:16,327 - INFO - Saved db to data/fileclw
+2023-07-05 07:16:16,327 - INFO - folder_path£ºdbf/clw
+2023-07-05 07:17:28,941 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:17:28,943 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:17:28,944 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:17:37,831 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:17:37,833 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:17:37,834 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:17:37,837 - INFO - Start Batch import
+2023-07-05 07:17:37,838 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:17:37,840 - INFO - self.temperature£º0.5
+2023-07-05 07:17:37,840 - INFO - self.max_context_tokens£º-1
+2023-07-05 07:17:37,841 - INFO - self.file_chunk_size£º200
+2023-07-05 07:17:37,841 - INFO - self.api_key£º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
+2023-07-05 07:17:37,874 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-05 07:17:37,877 - INFO - folder_path£ºdbf/gfile
+2023-07-05 07:17:37,877 - INFO - filename£ºliudongxingpipei.docx
+2023-07-05 07:17:38,973 - INFO - filename£º×÷ÎÄ.docx
+2023-07-05 07:17:39,139 - INFO - Loading faiss with AVX2 support.
+2023-07-05 07:17:39,140 - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2023-07-05 07:17:39,141 - INFO - Loading faiss.
+2023-07-05 07:17:39,266 - INFO - Successfully loaded faiss.
+2023-07-05 07:17:42,443 - ERROR - Error loading db: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\faiss\faiss\impl\io.cpp:68: Error: 'f' failed: could not open dbf\gfile\gfile.faiss for reading: No such file or directory
+2023-07-05 07:17:42,444 - INFO - Saved db to data/filegfile
+2023-07-05 07:17:42,569 - INFO - None
+2023-07-05 07:17:42,662 - INFO - None
+2023-07-05 07:18:18,400 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:18:18,402 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:18:18,403 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:18:20,232 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:18:20,234 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:18:20,235 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:18:20,238 - INFO - 0-Loading...Á÷¶¯ĞÔ¸²¸ÇÂÊµÄ¹«Ê½
+2023-07-05 07:18:20,283 - INFO - self.prompt_template£ºUse the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:18:20,285 - INFO - self.temperature£º0.5
+2023-07-05 07:18:20,285 - INFO - self.max_context_tokens£º-1
+2023-07-05 07:18:20,286 - INFO - self.file_chunk_size£º200
+2023-07-05 07:18:20,286 - INFO - self.api_key£º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
+2023-07-05 07:18:20,287 - INFO - input_variables=['context', 'question'] output_parser=None partial_variables={} template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        " template_format='f-string' validate_template=True
+2023-07-05 07:18:20,288 - INFO - 1-Loading question answering chain...[1mOpenAI[0m
+Params: {'model_name': 'text-davinci-003', 'temperature': 0.5, 'max_tokens': -1, 'top_p': 1, 'frequency_penalty': 0, 'presence_penalty': 0, 'n': 1, 'request_timeout': None, 'logit_bias': {}}
+2023-07-05 07:18:20,289 - INFO - folder_path£ºdbf/gfile
+2023-07-05 07:18:21,844 - INFO - 3-Answering question...memory=None callbacks=None callback_manager=None verbose=True tags=None input_key='input_documents' output_key='output_text' llm_chain=LLMChain(memory=None, callbacks=None, callback_manager=None, verbose=True, tags=None, prompt=PromptTemplate(input_variables=['context', 'question'], output_parser=None, partial_variables={}, template="Use the following pieces of context to answer the question at the end. \n        If you don't know the answer, just say that you don't know, don't try to make up an answer.\n        the answer must be chinese.\n        {context}\n\n        Question: {question}\n        Answer:\n        ", template_format='f-string', validate_template=True), llm=OpenAI(cache=None, verbose=False, callbacks=None, callback_manager=None, tags=None, client=<class 'openai.api_resources.completion.Completion'>, model_name='text-davinci-003', temperature=0.5, max_tokens=-1, top_p=1, frequency_penalty=0, presence_penalty=0, n=1, best_of=1, model_kwargs={}, openai_api_key='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', openai_api_base='', openai_organization='', openai_proxy='', batch_size=20, request_timeout=None, logit_bias={}, max_retries=6, streaming=False, allowed_special=set(), disallowed_special='all'), output_key='text', output_parser=NoOpOutputParser(), return_final_only=True, llm_kwargs={}) document_prompt=PromptTemplate(input_variables=['page_content'], output_parser=None, partial_variables={}, template='{page_content}', template_format='f-string', validate_template=True) document_variable_name='context' document_separator='\n\n'
+2023-07-05 07:18:23,999 - INFO - 4-Answering question... Á÷¶¯ĞÔÆ¥ÅäÂÊ=¼ÓÈ¨×Ê½ğÀ´Ô´/¼ÓÈ¨×Ê½ğÔËÓÃ¡Á100%
+2023-07-05 07:18:24,001 - WARNING - 'zh-cn' has been deprecated, falling back to 'zh-CN'. This fallback will be removed in a future version.
+2023-07-05 07:42:31,954 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:42:31,956 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:42:31,957 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:42:44,602 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:42:44,604 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:42:44,605 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:45:45,162 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:45:45,165 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:45:45,166 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:47:40,059 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:47:40,062 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:47:40,062 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:47:50,916 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:47:50,918 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:47:50,919 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:48:51,126 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:48:51,128 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:48:51,129 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:48:57,162 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:48:57,164 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:48:57,166 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        
+2023-07-05 07:49:02,227 - INFO - »¶Ó­»ØÀ´£¬gfile£¡
+2023-07-05 07:49:02,228 - INFO - Ê¹ÓÃ¾«È·ËÑË÷·½Ê½
+2023-07-05 07:49:02,229 - INFO - Use the following pieces of context to answer the question at the end. 
+        If you don't know the answer, just say that you don't know, don't try to make up an answer.
+        the answer must be chinese.
+        {context}
+
+        Question: {question}
+        Answer:
+        

@@ -1,3 +1,4 @@
+import os
 from langchain import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
@@ -11,6 +12,8 @@ from langchain.prompts import PromptTemplate
 from template import prompt_template_Document, prompt_template_GPT
 import pickle
 from logger_config import logger
+from langchain.document_loaders import BSHTMLLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 class FaissDB_Utils:
     def __init__(self, api_key=None,prompt_template=None,temperature=None,max_context_tokens=None,max_response_tokens=None,file_chunk_size=None):
@@ -58,6 +61,8 @@ class FaissDB_Utils:
             loader = TextLoader(file_path, encoding='utf-8')
         elif file_path.endswith(".pdf"):
             loader = UnstructuredPDFLoader(file_path)
+        elif filename.endswith(".html"):
+            loader = BSHTMLLoader(file_path)
         else:
             raise ValueError(f"Unsupported file format: {file_path}")
 
@@ -81,9 +86,62 @@ class FaissDB_Utils:
             db = FAISS.from_documents(documents=docs, embedding=self.embeddings)
             db.save_local(folder_path=folder_path, index_name=userName)
             logger.error(f"Error loading db: {e}")
-
-
         logger.info(f"Saved db to {filename}{userName}")
+
+
+    #批量处理目录下的文件     
+    def path_to_db(self, directory_path,userName=None):
+        db = None
+        folder_path="dbf/"+userName
+        logger.info(f"folder_path：{folder_path}")
+        data = []
+        try:
+            for filename in os.listdir(directory_path):
+                logger.info(f"filename：{filename}")
+                if filename.endswith(".docx") or filename.endswith(".doc"):
+                    loader = UnstructuredWordDocumentLoader(f'{directory_path}/{filename}')
+                    data.append(loader.load())
+                elif filename.endswith(".txt"):
+                    loader = TextLoader(f'{directory_path}/{filename}', encoding='utf-8')
+                    data.append(loader.load())
+                elif filename.endswith(".pdf"):
+                    loader = UnstructuredPDFLoader(f'{directory_path}/{filename}')
+                    data.append(loader.load())
+                elif filename.endswith(".html"):
+                    loader = BSHTMLLoader(f'{directory_path}/{filename}')
+                    data.append(loader.load())
+                else:
+                    continue
+            print(len(data))
+        except Exception as e:
+            print(f"Error loading documents: {e}")
+
+        text = []
+        for i in range(len(data)):
+            text.append(self.text_splitter.split_documents(data[i]))
+        print(len(text))
+
+        db_local=None
+        try:
+            db_local = FAISS.load_local(index_name=userName, embeddings=self.embeddings, folder_path=folder_path)
+
+            for doc in text:
+                doc_temp = [doc]
+                db_temp = FAISS.from_documents(documents=doc_temp, embedding=self.embeddings)
+                db_local.merge_from(db_temp)
+
+            db_local.save_local(folder_path=folder_path, index_name=userName)
+        except Exception as e:
+            for doc in text:
+                #如果是第一次循环，对db_local进行初始化
+                if db_local is None:
+                    db_local = FAISS.from_documents(documents=doc, embedding=self.embeddings)
+                else:
+                    db_local.merge_from(FAISS.from_documents(documents=doc, embedding=self.embeddings))
+            db_local.save_local(folder_path=folder_path, index_name=userName)
+            logger.error(f"Error loading db: {e}")
+        logger.info(f"Saved db to {directory_path}{userName}")
+    
 
     def get_document_by_vector_id(vector_id):
         with open("index.pkl", "rb") as f:

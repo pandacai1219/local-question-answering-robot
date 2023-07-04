@@ -14,7 +14,7 @@ faissDB_Utils = FaissDB_Utils(api_key=OpenAI_API_KEY)
 persist_directory='liudongxingpipei'
 filename=NameFormat.format(name=persist_directory)
 
-db = faissDB_Utils.create_or_import_to_db('data/file/liudongxingpipei.docx',filename=filename, userName='clw')
+db = faissDB_Utils.path_to_db(directory_path='data/file', userName='clw')
 
 # 查询数据
 query = "流动性覆盖率的公式？"

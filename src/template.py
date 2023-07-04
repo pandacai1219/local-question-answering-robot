@@ -15,6 +15,37 @@ prompt_template_GPT ='''Prioritize finding answers from the context. When it is 
         Answer:
         '''
 
+#问答Prompt模板
+template_Sumary='''你是一个AI智能问答机器人，
+需要根据我提出的问题，结合聊天记录和知识库内容回答我的问题
+以下双引号内为聊天记录总结：
+{chat_history}
+
+注意：必须参考以下双引号内的知识库内容进行回答：
+{context}
+如果无法回答再引用你的知识辅助回答
+
+回答要求
+1、中文回答
+2、答案需要分重点进行罗列回答
+3、当我的问题与聊天记录无关时，你只需要参考知识库内容进行回答
+4、代码部分以MarkDown格式暑促
+现在我的问题时：{question}
+'''
+
+#聊天记录总结Prompt模板
+template_Sumary2='''需要你根据提供的聊天记录进行总结。
+我会再之前的总结上增加新的聊天记录，增加一个新的总结。
+当前的聊天记录总结：
+{summary}
+
+新的聊天记录总结：
+{new_lines}
+
+注意：务必表现出整个聊天的上下文关系，以叙事的风格进行总结，一定保证问答过程的完整性。
+新的聊天记录总结：
+'''
+
 #根据现有知识回答问题
 prompt_template_CS ='''I am a highly intelligent question answering bot. If you ask me a question that is rooted in truth, I will give you the answer. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with \"Unknown\".
 

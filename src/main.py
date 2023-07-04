@@ -91,13 +91,14 @@ else:
     # 使用 file_uploader 函数添加文件上传部件
     uploaded_file = st.sidebar.file_uploader("上传文件", type=["docx","doc", "pdf", "txt"])
     username = st.session_state.username
+
     # 如果有文件被上传，则在右侧栏中显示文件信息
     if uploaded_file is not None:
-        file_details = {"FileName": uploaded_file.name, "FileType": uploaded_file.type}
+        file_details = {"FileName": uploaded_file.name}
 
         st.sidebar.write(file_details)
         # 添加一个按钮来触发 read_doc_file 函数
-        if st.sidebar.button("执行操作"):
+        if st.sidebar.button("单文件提交", key="single_button"):
           # 将上传的文件保存到项目主目录的data文件夹中
           with open(os.path.join("data/file", uploaded_file.name), "wb") as f:
               f.write(uploaded_file.getbuffer())
@@ -128,10 +129,41 @@ else:
               st.write(f"Error answering question: {e}")
           #streamlit输出提示“文件上传成功”
           st.success("文件上传成功"+str(file_details)+",被切割成"+str(st.session_state.faissDB_Utils.docCount)+"个片段。")
-          # 插入文件名数据
-          insert_datetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-          
 
+        
+          
+    # 添加一个按钮来触发 read_doc_file 函数
+    if st.sidebar.button("data/file批量上传", key="batch_button"):
+        logger.info("Start Batch import")
+        # 读取文档
+        st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
+        st.session_state.faissDB_Utils.path_to_db(directory_path="data/file",  userName=username)
+        #将data文件夹中的所有文件迁移至BAK文件夹
+        for filename in os.listdir("data/file"):
+            #忽略没有后缀的文件夹
+            if not os.path.splitext(filename)[1]:
+                continue
+            with open(os.path.join("data/file", filename), "rb") as f:
+                data = f.read()
+                result = chardet.detect(data)
+                file_encoding = result['encoding']
+                logger.info(file_encoding)              
+            with open(os.path.join("bak", filename), "wb") as f: 
+                f.write(data)
+            newFileName=NameFormat.format(name=filename)
+            NameFormat.rename(os.path.join("bak", filename),os.path.join("bak", newFileName))
+              
+          #删除data文件夹下的所有文件
+        try:
+            for root, dirs, files in os.walk("data/file", topdown=False):
+                for name in files:
+                    os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+        except Exception as e:
+              st.write(f"Error answering question: {e}")
+          #streamlit输出提示“文件上传成功”
+        st.success("文件上传成功,被切割成"+str(st.session_state.faissDB_Utils.docCount)+"个片段。")     
     # 提交按钮
     my_bar = st.progress(0, text="等待投喂问题")
     if st.button("提交", key="submit_button"):
@@ -196,13 +228,13 @@ else:
               #st.markdown("</div>", unsafe_allow_html=True)
 
               st.markdown("<div class='progress-container'>", unsafe_allow_html=True)
-              file_chunk_size = st.slider("切分每份文件的大小", min_value=50, max_value=1000, step=50, value=100)
+              file_chunk_size = st.slider("切分每份文件的大小", min_value=50, max_value=1000, step=50, value=200)
               st.markdown("</div>", unsafe_allow_html=True)
 
               #To add an input box for the API key
               api_key = st.text_input("API Key", "")
 
-              submit_button = st.form_submit_button("Update Settings")
+              submit_button = st.form_submit_button("设置")
 
     if submit_button:
         # Update variables with the current slider values
