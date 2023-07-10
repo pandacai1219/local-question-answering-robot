@@ -88,82 +88,8 @@ else:
     values_to_session_state(st, values)
     # 用户输入
     question = st.text_input("请输入您的问题:", "", key="question_input")
-    # 使用 file_uploader 函数添加文件上传部件
-    uploaded_file = st.sidebar.file_uploader("上传文件", type=["docx","doc", "pdf", "txt"])
-    username = st.session_state.username
-
-    # 如果有文件被上传，则在右侧栏中显示文件信息
-    if uploaded_file is not None:
-        file_details = {"FileName": uploaded_file.name}
-
-        st.sidebar.write(file_details)
-        # 添加一个按钮来触发 read_doc_file 函数
-        if st.sidebar.button("单文件提交", key="single_button"):
-          # 将上传的文件保存到项目主目录的data文件夹中
-          with open(os.path.join("data/file", uploaded_file.name), "wb") as f:
-              f.write(uploaded_file.getbuffer())
-              st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
-          logger.info("1-Reading document...") 
-          logger.info(file_details)
-          # 读取文档
-          file_path=os.path.join("data/file", uploaded_file.name)
-          st.session_state.faissDB_Utils.create_or_import_to_db(file_path=file_path, filename=uploaded_file.name, userName=username)
-          #将data文件夹中的文件迁移至BAK文件夹
-          with open(os.path.join("data/file", uploaded_file.name), "rb") as f:
-              data = f.read()
-              result = chardet.detect(data)
-              file_encoding = result['encoding']
-              logger.info(file_encoding)              
-          with open(os.path.join("bak", uploaded_file.name), "wb") as f: 
-              f.write(data)
-          newFileName=NameFormat.format(name=uploaded_file.name)
-          NameFormat.rename(os.path.join("bak", uploaded_file.name),os.path.join("bak", newFileName))
-          #删除data文件夹下的所有文件
-          try:
-            for root, dirs, files in os.walk("data/file", topdown=False):
-                for name in files:
-                    os.remove(os.path.join(root, name))
-                for name in dirs:
-                    os.rmdir(os.path.join(root, name))
-          except Exception as e:
-              st.write(f"Error answering question: {e}")
-          #streamlit输出提示“文件上传成功”
-          st.success("文件上传成功"+str(file_details)+",被切割成"+str(st.session_state.faissDB_Utils.docCount)+"个片段。")
-
-        
-          
     # 添加一个按钮来触发 read_doc_file 函数
-    if st.sidebar.button("data/file批量上传", key="batch_button"):
-        logger.info("Start Batch import")
-        # 读取文档
-        st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
-        st.session_state.faissDB_Utils.path_to_db(directory_path="data/file",  userName=username)
-        #将data文件夹中的所有文件迁移至BAK文件夹
-        for filename in os.listdir("data/file"):
-            #忽略没有后缀的文件夹
-            if not os.path.splitext(filename)[1]:
-                continue
-            with open(os.path.join("data/file", filename), "rb") as f:
-                data = f.read()
-                result = chardet.detect(data)
-                file_encoding = result['encoding']
-                logger.info(file_encoding)              
-            with open(os.path.join("bak", filename), "wb") as f: 
-                f.write(data)
-            newFileName=NameFormat.format(name=filename)
-            NameFormat.rename(os.path.join("bak", filename),os.path.join("bak", newFileName))
-              
-          #删除data文件夹下的所有文件
-        try:
-            for root, dirs, files in os.walk("data/file", topdown=False):
-                for name in files:
-                    os.remove(os.path.join(root, name))
-                for name in dirs:
-                    os.rmdir(os.path.join(root, name))
-        except Exception as e:
-              st.write(f"Error answering question: {e}")
-          #streamlit输出提示“文件上传成功”
-        st.success("文件上传成功,被切割成"+str(st.session_state.faissDB_Utils.docCount)+"个片段。")     
+    username = st.session_state.username
     # 提交按钮
     my_bar = st.progress(0, text="等待投喂问题")
     if st.button("提交", key="submit_button"):
@@ -175,6 +101,7 @@ else:
           logger.info("1-Loading question answering chain..." + str(llm))
           my_bar.progress(10, text="正在加载问题回答模型")
           try:
+              logger.info("username:"+username)
               docsearch = langchain_util.search_documents(query=question, userName=username)
               logger.info("2-Searching for similar documents..." + str(docsearch))
           
@@ -188,11 +115,23 @@ else:
               my_bar.progress(100, text="问题回答完毕")
 
               st.success(answer,icon="🤖")
-
-              st.write(f"总令牌数: {cb.total_tokens}")
-              st.write(f"提示令牌数: {cb.prompt_tokens}")
-              st.write(f"完成令牌数: {cb.completion_tokens}")
-              st.write(f"总成本: {cb.total_cost} 美元")
+              
+              #查询文件的内容以及对应的原文件
+              faiss_research= ""
+              for i, result in enumerate(docsearch):
+                file_path = result.metadata['source']
+                file_name = file_path.split('/')[-1]  # 使用分隔符 '/' 分割路径并获取最后一个部分作为文件名
+                faiss_research=faiss_research+"\n"+result.page_content+"\n"+file_name;
+              
+              with st.expander('相关材料'):
+                  st.info(faiss_research)
+              with st.expander('使用模板'):
+                  st.info(st.session_state.prompt_template)
+              with st.expander('消费金额'):
+                  st.write(f"总令牌数: {cb.total_tokens}")
+                  st.write(f"提示令牌数: {cb.prompt_tokens}")
+                  st.write(f"完成令牌数: {cb.completion_tokens}")
+                  st.write(f"总成本: {cb.total_cost} 美元")
 
               # 将答案转换为语音并播放
               if answer:
@@ -254,3 +193,83 @@ else:
 
         # Pause for a short period to avoid high CPU usage
         time.sleep(0.1)
+
+
+
+
+    if st.sidebar.button("data/file批量上传", key="batch_button"):
+        logger.info("Start Batch import")
+        # 读取文档
+        st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
+        st.session_state.faissDB_Utils.path_to_db(directory_path="data/file",  userName=username)
+        #将data文件夹中的所有文件迁移至BAK文件夹
+        for filename in os.listdir("data/file"):
+            #忽略没有后缀的文件夹
+            if not os.path.splitext(filename)[1]:
+                continue
+            with open(os.path.join("data/file", filename), "rb") as f:
+                data = f.read()
+                result = chardet.detect(data)
+                file_encoding = result['encoding']
+                logger.info(file_encoding)              
+            with open(os.path.join("bak", filename), "wb") as f: 
+                f.write(data)
+            newFileName=NameFormat.format(name=filename)
+            NameFormat.rename(os.path.join("bak", filename),os.path.join("bak", newFileName))
+              
+          #删除data文件夹下的所有文件
+        try:
+            for root, dirs, files in os.walk("data/file", topdown=False):
+                for name in files:
+                    os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+        except Exception as e:
+              st.write(f"Error answering question: {e}")
+          #streamlit输出提示“文件上传成功”
+        st.success("文件上传成功,被切割成"+str(st.session_state.faissDB_Utils.docCount)+"个片段。")     
+
+        
+    # 使用 file_uploader 函数添加文件上传部件
+    uploaded_file = st.sidebar.file_uploader("上传文件", type=["docx","doc", "pdf", "txt","csv"])
+
+    # 如果有文件被上传，则在右侧栏中显示文件信息
+    if uploaded_file is not None:
+        file_details = {"FileName": uploaded_file.name}
+
+        st.sidebar.write(file_details)
+        # 添加一个按钮来触发 read_doc_file 函数
+        if st.sidebar.button("单文件提交", key="single_button"):
+          # 将上传的文件保存到项目主目录的data文件夹中
+          with open(os.path.join("data/file", uploaded_file.name), "wb") as f:
+              f.write(uploaded_file.getbuffer())
+              st.session_state.faissDB_Utils = FaissDB_Utils(prompt_template=st.session_state.prompt_template,temperature=st.session_state.temperature,max_context_tokens=st.session_state.max_context_tokens,max_response_tokens=st.session_state.max_response_tokens,file_chunk_size=st.session_state.file_chunk_size,api_key=st.session_state.api_key)
+          logger.info("1-Reading document...") 
+          logger.info(file_details)
+          # 读取文档
+          file_path=os.path.join("data/file", uploaded_file.name)
+          st.session_state.faissDB_Utils.create_or_import_to_db(file_path=file_path, filename=uploaded_file.name, userName=username)
+          #将data文件夹中的文件迁移至BAK文件夹
+          with open(os.path.join("data/file", uploaded_file.name), "rb") as f:
+              data = f.read()
+              result = chardet.detect(data)
+              file_encoding = result['encoding']
+              logger.info(file_encoding)              
+          with open(os.path.join("bak", uploaded_file.name), "wb") as f: 
+              f.write(data)
+          newFileName=NameFormat.format(name=uploaded_file.name)
+          NameFormat.rename(os.path.join("bak", uploaded_file.name),os.path.join("bak", newFileName))
+          #删除data文件夹下的所有文件
+          try:
+            for root, dirs, files in os.walk("data/file", topdown=False):
+                for name in files:
+                    os.remove(os.path.join(root, name))
+                for name in dirs:
+                    os.rmdir(os.path.join(root, name))
+          except Exception as e:
+              st.write(f"Error answering question: {e}")
+          #streamlit输出提示“文件上传成功”
+          st.success("文件上传成功"+str(file_details)+",被切割成"+str(st.session_state.faissDB_Utils.docCount)+"个片段。")
+
+        
+          

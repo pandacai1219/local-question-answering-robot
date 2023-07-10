@@ -13,7 +13,7 @@ from template import prompt_template_Document, prompt_template_GPT
 import pickle
 from logger_config import logger
 from langchain.document_loaders import BSHTMLLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.document_loaders.csv_loader import CSVLoader
 
 class FaissDB_Utils:
     def __init__(self, api_key=None,prompt_template=None,temperature=None,max_context_tokens=None,max_response_tokens=None,file_chunk_size=None):
@@ -63,6 +63,8 @@ class FaissDB_Utils:
             loader = UnstructuredPDFLoader(file_path)
         elif filename.endswith(".html"):
             loader = BSHTMLLoader(file_path)
+        elif filename.endswith(".csv"):
+            loader = CSVLoader(file_path)
         else:
             raise ValueError(f"Unsupported file format: {file_path}")
 
@@ -110,6 +112,9 @@ class FaissDB_Utils:
                 elif filename.endswith(".html"):
                     loader = BSHTMLLoader(f'{directory_path}/{filename}')
                     data.append(loader.load())
+                elif filename.endswith(".csv"):
+                    loader = CSVLoader(f'{directory_path}/{filename}')
+                    data.append(loader.load())
                 else:
                     continue
             print(len(data))
@@ -142,13 +147,6 @@ class FaissDB_Utils:
             logger.error(f"Error loading db: {e}")
         logger.info(f"Saved db to {directory_path}{userName}")
     
-
-    def get_document_by_vector_id(vector_id):
-        with open("index.pkl", "rb") as f:
-            docstore, index_to_docstore_id = pickle.load(f)
-        docstore_id = index_to_docstore_id[vector_id]
-        metadata = docstore[docstore_id]
-        return metadata
 
     def search_documents(self, query, userName=None):
         folder_path="dbf/"+userName
